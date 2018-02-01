@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<style>
+*{margin:0;padding:0;}
+body{background:#000;}
+.out{width:300px;height:100px;border:2px solid #fff;margin:150px auto;position:relative;}
+p{position:absolute;border:1px solid #fff;opacity:0;transition:all 1s;}
+.t{width:52px;left:-120px;top:-2px;
+}
+.b{width:52px;right:-120px;bottom:-2px;
+}
+.l{height:52px;bottom:-120px;left:-2px;
+}
+.r{height:52px;top:-120px;right:-2px;
+}
+.out:hover .t{left:0;opacity:1;}	
+.out:hover .b{right:0;opacity:1;}
+.out:hover .l{bottom:0;opacity:1;}
+.out:hover .r{top:0;opacity:1;}
+
+</style>
+</head>
+<body>
+	<div class="out">
+<p class="t"></p>
+<p class="l"></p>
+<p class="r"></p>
+<p class="b"></p>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	.tab{background:#FC9;border:3px solid #333;margin:0 auto;}
+</style>
+<script>
+	/*
+		A型男 ：性格特征：内向、思考者、悲观。 
+		A型女:性格特征：温柔、体贴、能干。
+		B型的男性:性格特征：外向、多言、乐观。
+		B型女性：性格特征：不甘寂寞，既热心又粗心。
+		AB型男：性格特征：内向、旁观看、悲观。
+		AB型女性：性格特征：没有野心，只求温饱、生活稳定便心满意足。 
+		O型：性格特征是外向、行动者、乐观。 
+	*/
+	window.onload=function(){
+		var txt1=document.getElementById('txt1')
+		var txt2=document.getElementById('txt2')
+		var txt3=document.getElementById('txt3')
+		var btn1=document.getElementById('btn1')
+		var btn2=document.getElementById('btn2')
+		
+		txt1.onblur=function(){
+			var reg=/^(A|B|(AB)|O)$/i
+			if(!reg.test(txt1.value)){
+				alert('输入血型错误！')	
+			}	
+		}
+		txt2.onblur=function(){
+			var reg=/^(男|女)$/	
+			if(!reg.test(txt2.value)){
+				alert('输入错误！')	
+			}
+		}
+		btn1.onclick=function(){
+			var num1=txt1.value;
+			var num2=txt2.value;
+			if(num2=='男'){
+				if(num1=='a'||num1=='A'){
+					txt3.value='内向、思考者、悲观'	
+				}else if(num1=='b'||num1=='B'){
+					txt3.value='不甘寂寞，既热心又粗心'
+				}else if(num1=='ab'||num1=='AB'){
+					txt3.value='内向、旁观看、悲观'
+				}else if(num1=='o'||num1=='O'){
+					txt3.value='性格特征是外向、行动者、乐观'
+				}	
+			}
+			
+			if(num2=='女'){
+				if(num1=='a'||num1=='A'){
+					txt3.value='温柔、体贴、能干'	
+				}else if(num1=='b'||num1=='B'){
+					txt3.value='外向、多言、乐观'
+				}else if(num1=='ab'||num1=='AB'){
+					txt3.value='没有野心，只求温饱、生活稳定便心满意足'
+				}else if(num1=='o'||num1=='O'){
+					txt3.value='性格特征是外向、行动者、乐观'
+				}	
+			}
+		}
+		
+		btn2.onclick=function(){
+			txt1.value='';
+			txt2.value='';
+			txt3.value='';	
+		}
+	}
+</script>
+</head>
+
+<body>
+<table border='1' class='tab'>
+	<tr>
+    	<th><h1>血型与性格</h1></th>
+    </tr>
+    <tr>
+    	<td>请输入血型：<input type='text' id='txt1' /></td>
+    </tr>
+    <tr>
+    	<td>请输入性别：<input type='text' id='txt2' /></td>
+    </tr>
+    <tr>
+    	<td align='center'>
+    		<input type="button" id='btn1' value='提交' />
+        	<input type="button" id='btn2' value='重置' />
+        </td>
+    </tr>
+    <tr>
+    	<td>
+    		<textarea cols='50' rows='6' id='txt3'></textarea>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

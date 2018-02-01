@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>标题</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="swiper-3.3.1.min.css">
+<link rel="stylesheet" href="animate.min.css">
+<style>
+	body,html{width:100%;height:100%}
+	.sw,.s1,.s2,.s3,.sw2{width:100%;height:100%;}
+
+	.s1{background:url(imgs/6.jpg) 0 0 no-repeat;background-size:cover;}
+	.s2{background:url(imgs/7.jpg) 0 0 no-repeat;background-size:cover;}
+	.s3{background:url(imgs/8.jpg) 0 0 no-repeat;background-size:cover;}
+	.s4{background:url(imgs/9.jpg) 0 0 no-repeat;background-size:cover;}
+	.s5{background:url(imgs/10.jpg) 0 0 no-repeat;background-size:cover;}
+	.img1,.img2,.img3,.img4,.img5{width:100%;height:50%;}
+
+	p{font-size:37px;line-height:50px;font-weight:bolder;margin:0 50px;color:white;}
+	
+	.p6{text-shadow:10px 10px 10px #504E0D;}
+	.p2{text-shadow:10px 10px 10px #53781F;}
+	.p3{text-shadow:10px 10px 10px #283C15;}
+	.p4{text-shadow:10px 10px 10px #85789E;}
+	.p5{text-shadow:10px 10px 10px #891E56;}
+</style>
+</head>
+<body>
+<div class="swiper-container sw">
+	<div class="swiper-wrapper sw2"> 
+		<div class="swiper-slide s1">
+			<img src="imgs/1.jpg" class="ani img1" swiper-animate-effect="bounce" swiper-animate-duration="1s" swiper-animate-delay="">
+			
+
+			<p class="ani p6"  swiper-animate-effect="flip" swiper-animate-duration="1s" swiper-animate-delay="0.5s">我的名字是旗木卡卡西，喜欢的东西和不喜欢的东西……不想告诉你们，将来的梦想嘛……兴趣也是多种多样的…….!!!!!!!!!!!<br/>忍者要沉着冷静、仔细判断！打破忍者世界规则的人，我们都叫他废物。……可是，不懂得重视同伴的人，是最最差劲的废物！ </p>
+
+		</div> 
+
+
+
+		<div class="swiper-slide s2">
+			<img src="imgs/2.jpg" class="ani img2" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="0.2s">
+			<p class="ani p2"  swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0.5s">你和我有着相同的梦想，都希望实现和平。你和我没有任何区别，都是为了正义而活。我对你的村 子实行的正义，和你试图击倒我的想法没有任何的区别。失去真正重要的东西所带来的痛楚，对谁 来说都是一样，你和我都对这样的痛楚感同身受</p>
+		</div> 
+
+
+		<div class="swiper-slide s3">
+			<img src="imgs/3.jpg" class="ani img3" swiper-animate-effect="shake" swiper-animate-duration="1s" swiper-animate-delay="">
+			<p class="ani p3"  swiper-animate-effect="wobble" swiper-animate-duration="1s" swiper-animate-delay="0.5s">这个世上不会事事如你所愿，活得越久…越是能体会现实里只充斥着无奈痛苦以及空虚…听好…世间万物…有光的地方必定有阴影，若有胜者这一概念，必定同时存在着败者。若心生维持和平这种自私的想法，就会挑起战争。若想守护，爱必会衍生出恨，他们彼此之间存在着因果关系，无法被分离，这就是现实…</p>
+</p>
+		</div> 
+
+
+		<div class="swiper-slide s4">
+			<img src="imgs/4.jpg" class="ani img4" swiper-animate-effect="bounceInUp" swiper-animate-duration="1s" swiper-animate-delay="">
+			<p class="ani p4"  swiper-animate-effect="rotateIn" swiper-animate-duration="1s" swiper-animate-delay="0.5s">人的命运到底是沉浮在像云一样已经决定好的潮流之中，还是能够跟随着自己所选择的潮流走的东西呢？不管选择哪条路，最后可能都会走到同样的终点。但是当选择了后者时，人们就可以努力地为活着的目的努力，而拥有这种想法的人才是真正的强者。</p>
+		</div> 
+
+
+		<div class="swiper-slide s5">
+			<img src="imgs/5.jpg" class="ani img5" swiper-animate-effect="bounceInRight" swiper-animate-duration="1s" swiper-animate-delay="">
+			<p class="ani p5"  swiper-animate-effect="bounceInUp" swiper-animate-duration="1s" swiper-animate-delay="0.5s">你没有被杀的价值，我愚蠢的弟弟啊，想要杀死我的话，你就憎恨我、仇恨我，然后苟且偷生地活下去吧，逃避着逃避着，紧抱着生命就好，然后，等你带着和我同样的眼睛时再来到我面前，到了那个时候，你的存在才有意义。</p>
+		</div> 
+
+
+
+	</div> 
+<div class="swiper-pagination"></div>
+
+</div> 
+</body>
+<script type="text/javascript" src="zepto-1.1.6.min.js"></script>
+<script type="text/javascript" src="swiper-3.3.1.jquery.min.js"></script>
+<script type="text/javascript" src="swiper.animate1.0.2.min.js"></script>
+<script>
+function bodyScale(){
+var devicewidth=document.documentElement.clientWidth;
+	var scale=devicewidth/640;
+	document.body.style.zoom=scale;
+}
+window.onload=window.onresize=function(){
+	bodyScale();
+
+
+
+var mySwiper = new Swiper ('.swiper-container', { 
+	direction: 'vertical',
+	loop: true, 
+autoplay:3000,
+
+// freeMode:true,
+// freeModeSticky:true,
+effect:'coverflow',
+// effect:'flip',
+ pagination: '.swiper-pagination', 
+	// paginationType:'progress',
+
+	onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit 
+		swiperAnimateCache(swiper); //隐藏动画元素 		
+		swiperAnimate(swiper); //初始化完成开始动画
+	 }, 
+	onSlideChangeEnd: function(swiper){
+	 	swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+	 } 
+ }) 
+}
+</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>form</title>
+	<style>
+	form{height:440px;width:500px;margin:100px auto;background:yellow;}
+	p{padding-top:10px;font-size:40px;font-weight:900;color:white;width:100%;text-align:center;margin-bottom:20px;}
+	label{margin-left:20px;font-size:20px;color:white;margin-right:50px;}
+	span{margin-right:45px;}
+	input{width:300px;height:30px;padding-left:10px;margin-bottom:40px;border:0;position:relative;}
+	.btn{margin:20px 20px;background:green;width:450px;height:30px;line-height:30px;text-align:center;font-size:20px;color:white;}
+	b{position:absolute;}
+	</style>
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+		(function($){
+			$(function(){
+				$("#name1").blur(function() {
+					
+			var val1 = $(this).val();
+			var reg1 =/\w/;
+			
+				if (reg1.test(val1)) {
+					alert('不含特殊字符')
+				} 
+			
+
+		});
+				$("#name2").blur(function() {
+			var val2 = $(this).val();
+			var reg2 = /^[a-zA-Z][a-zA-Z0-9_]{5,15}$/;
+			
+				if (reg2.test(val2)) {
+					
+						alert('请输入6-16位数字或字母')
+				} 
+			
+
+		});
+
+
+				$("#name3").blur(function() {
+			var val2 = $("#name2").val();
+			var val3 = $(this).val();
+			if(val2!==val3){
+					alert('两次输入密码不一致')
+
+			}
+		});
+
+
+				
+
+
+			})
+		})(jQuery)
+
+
+
+	</script>
+</head>
+<body>
+<form action="">
+<p>注册</p>
+<label for="name"><span>账</span>号</label><input type="email" id="name" placeholder="请使用邮箱注册" required>
+<label for="name1"><span>昵</span>称</label><input type="text" id="name1" placeholder="不含特殊符号" required>
+<b></b>
+<label for="name2"><span>密</span>码</label><input type="password" id="name2" placeholder="6-16位数字或字母" required>
+<b></b>
+<label for="name3">确认密码</label><input type="password" id="name3" placeholder="再次输入密码" required>
+<b></b>
+<input type="submit" class="btn" value="注册">
+</form>
+</body>
+
+
+
+</html>

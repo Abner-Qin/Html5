@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+	
+	<style>
+*{margin:0;padding:0;}
+img{display:block;}
+header{font-size:38px;color:#fff;text-align:center;line-height:86px;height:86px;background:#22292C;width:639px;}
+section{width:639px;height:930px;background:url(t7.jpg) no-repeat;position:relative;overflow:hidden;}
+#t1,#t2,#t3,#t4{position:absolute;z-index:1;transition:all 2s;}
+#t1{left:10px;top:20px;transform:translateX(-320px) rotate(-180deg);}
+#t2{left:160px;top:120px;z-index:2;transform:translateX(320px) rotate(-180deg);}
+#t3{left:280px;top:80px;transform:translateX(320px) rotate(-180deg);}
+#t4{left:330px;top:175px;transform:translateX(320px) rotate(-180deg);}
+#t5{width:639px;height:640px;transition:all 2s linear;transform:translateY(-640px);overflow:hidden;}
+#t6{width:639px;height:281px;transition:all 2s linear;transform:translateY(320px);overflow:hidden;}
+
+p{height:37px;text-align:center;line-height:37px;color:#1A80C7;}
+
+footer{height:80px;background:#008CDB;overflow:hidden;}
+footer p{float:left;height:80px;text-align:center;color:#F5EE08;font-size:30px;line-height:80px;}
+footer p:nth-child(1){width:336px;border-right:1px solid #999;}
+footer p:nth-child(2){width:290px;}
+	</style>
+
+</head>
+
+
+
+<body>
+	<header>我的青春不着调</header>
+	<section>
+	<div id="t1"><img src="t1.png" alt=""></div>
+	<div id="t2"><img src="t2.png" alt=""></div>
+	<div id="t3"><img src="t3.png" alt=""></div>
+	<div id="t4"><img src="t4.png" alt=""></div>
+	<div id="t5"><img src="t5.png" alt=""></div>
+	<p>是型男还是萌妹？选择卡片开始制作吧</p>
+	<div id="t6"><img src="t6.png" alt=""></div>
+	</section>
+	<footer>
+<p>首页</p>
+<p>名片夹</p>
+	</footer>
+</body>
+<script>
+var t1=document.getElementById('t1')
+var t2=document.getElementById('t2')
+var t3=document.getElementById('t3')
+var t4=document.getElementById('t4')
+var t5=document.getElementById('t5')
+var t6=document.getElementById('t6')
+
+
+function bodyScale(){
+var devicewidth=document.documentElement.clientWidth;
+	var scale=devicewidth/640;
+	document.body.style.zoom=scale;
+}
+
+window.onload=window.onresize=function(){	
+t1.style.transform='translateX(0)';
+t2.style.transform='translateX(0)';
+t3.style.transform='translateX(0)';
+t4.style.transform='translateX(0)';
+t5.style.transform='translateY(0)';
+t6.style.transform='translateY(5px)';
+	bodyScale();
+
+}
+
+
+
+</script>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>标题</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<style>
+	*{margin:0;padding:0;}
+	#out{width:600px;height:500px;margin:50px auto;border:1px solid red;}
+</style>
+</head>
+<body>
+	<div id="out">
+		<canvas id="cvs" width="600" height="500"></canvas>
+	</div>
+</body>
+<script>
+	var cvs=document.getElementById('cvs');
+	var ctx=cvs.getContext('2d');
+	var x=0,y=0,z=true,s=true;
+	setInterval(function(){
+		ctx.clearRect(0,0,cvs.width,cvs.height);
+		if (z) {
+			x++;
+			if (x>=(cvs.width-50)) {
+				z=false;
+			};
+		}else{
+			x--;
+			if (x<=0) {
+				z=true;
+			};
+		};
+
+		if (s) {
+			y++;
+			if (y>=(cvs.height-50)) {
+				s=false;
+			};
+		}else{
+			y--;
+			if (y<=0) {
+				s=true;
+			};
+		};
+
+		ctx.fillStyle='green';
+		ctx.fillRect(x,y,50,50);
+	},1)
+</script>
+</html>

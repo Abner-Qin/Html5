@@ -1,0 +1,199 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>标题</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	html{
+		height:100%;
+	}
+	body{
+		width:100%;
+		height:100%;
+		display:-webkit-box;
+		-webkit-box-orient:vertical;
+		background:url(3.jpg);
+		background-size:cover;
+
+	}
+	header{
+		width:100%;
+		height:80px;
+		margin:0 auto;
+		font-size:60px;
+		line-height: 80px;
+		text-align: center;
+		background:grba(0,0,0,0.6)
+		border-bottom:2px solid #fff;
+		color:green;
+	}
+	section{
+		-webkit-box-flex:1;
+		overflow: auto;
+	}
+	div{
+		height:80px;
+		border-bottom:2px solid #fff;
+		text-align: center;
+		line-height: 80px;
+		font-size:30px;
+		cursor:pointer;
+		font-family:'Microsoft yahei';
+		color:#fff;
+	}
+	div:hover{
+		color:blue;
+		background:rgba(88,88,88,0.4)
+	}
+	.color{color:blue;}
+	footer{
+		width:100%;
+		height:80px;
+		margin:0 auto;
+		background:rgba(0,0,0,0.6);
+	}
+	p{
+		width:25%;
+		margin:0 auto;
+		position:relative;
+		height:80px;
+		overflow: hidden;
+		
+	}
+	#span1,#span3{
+		width:25%;
+		text-align:center;
+		line-height:80px;
+		font-size:40px;
+		color:#fff;
+		cursor:pointer;
+		font-weight:bold;
+	}
+	#span1{
+		position:absolute;
+		left:0;
+		top:0px;
+	}
+	#span3{
+		position:absolute;
+		right:0;
+		top:0px;
+	}
+	#span2{
+		width:40px;
+		height:40px;
+		margin:20px auto;
+		display:block;
+		cursor:pointer;
+	}
+	#span2 img{
+		width:40px;
+		height:40px;
+	}
+	
+</style>
+<body>
+	<header>音乐点歌台</header>
+	<section>
+		<div>美人鱼-林俊杰</div>
+		<div>宠爱-TF-BOYS</div>
+		<div>爱与希望-林俊杰</div>
+		<div>小幸运-田馥甄</div>
+		<div>爱囚-庄心妍</div>
+		<div>海绵宝宝-林俊杰</div>
+		<audio src="" controls></audio>
+	</section>
+	<footer>
+		<p>
+			<span id="span1">&lt;</span><span id="span2"><img id='img' src="7.png" alt=""></span><span id="span3">&gt;</span>
+		</p>
+	</footer>
+	
+</body>
+<script>
+
+	var
+		odiv=document.getElementsByTagName('div')
+		oaudio=document.getElementsByTagName('audio')[0]
+		span1=document.getElementById('span1')
+		span2=document.getElementById('span2')
+		span3=document.getElementById('span3')
+		oimg=document.getElementById('img')
+
+		arr=['美人鱼.mp3','宠爱.mp3','爱与希望.mp3','小幸运.mp3','爱囚.MP3','海绵宝宝.mp3']
+		for(var i=0;i<odiv.length;i++){
+			odiv[i].index=i
+			odiv[i].onclick=function(){
+				for(var k=0;k<odiv.length;k++){
+					odiv[k].className=""
+				}
+				var I=this.index
+				oaudio.src=arr[I]
+				oaudio.play()
+				oimg.src='6.png'
+				this.className='color'
+				oaudio.addEventListener('ended',function(){
+			 		I++;
+			 		if(I>arr.length-1){
+			 			I=0;
+			 		}
+			 		oaudio.src=arr[I];
+			 		oaudio.play();
+			 		for(var k=0;k<odiv.length;k++){
+					odiv[k].className=""
+					}
+			 		odiv[I].className='color'			 		
+			 		})
+				span1.onclick=function(){
+					if(I<=0){
+						I=arr.length-1
+					}else{
+						I--
+					}
+					for(var k=0;k<odiv.length;k++){
+					odiv[k].className=""
+					}
+					oaudio.src=arr[I]
+					oaudio.play()
+					oimg.src='6.png'
+					odiv[I].className='color'
+				}
+				span2.onclick=function(){
+					var 
+						a=oaudio.paused
+
+						if(a){
+							oaudio.play()
+							oimg.src='6.png'
+						}else{
+							oaudio.pause()
+							oimg.src='7.png'
+						}	
+				}
+				span3.onclick=function(){
+					if(I>=arr.length-1){
+						I=0
+					}else{
+						I++
+					}
+					for(var k=0;k<odiv.length;k++){
+					odiv[k].className=""
+					}
+					oaudio.src=arr[I]
+					oaudio.play()
+					oimg.src='6.png'
+					odiv[I].className='color'
+				}
+			}
+		}		
+		
+		
+</script>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html5 canvas圆形时钟代码 - 站长素材</title>
+
+<style type="text/css">
+div{width:400px;height:400px;margin:10px auto;background:url(01.jpg) repeat;}
+    #myCanvas{
+        display: block;
+        margin:10px auto;
+    }
+</style>
+
+</head>
+<body>
+<div>
+<canvas id="myCanvas" width="400" height="400"></canvas>
+</div>
+
+
+</body>
+
+<script type="text/javascript">
+    var cvs = document.getElementById('myCanvas');
+    var ctx = cvs.getContext('2d');
+    function clock(){
+        ctx.clearRect(0,0,400,400);
+        var data = new Date();
+        var sec =data.getSeconds();
+        var min =data.getMinutes();
+        var hour=data.getHours();
+        
+        ctx.save();
+        ctx.translate(200,200);
+        ctx.rotate(-Math.PI/2);
+
+        
+        //分钟刻度线
+        for(var i=0;i<60;i++){  //画60个刻度线           
+            ctx.beginPath();
+            ctx.strokeStyle = "#f00";             
+            ctx.lineWidth = 5 ;
+            ctx.moveTo(117,0);
+            ctx.lineTo(120,0);
+            ctx.stroke();
+            ctx.rotate(Math.PI/30); //每个6deg画一个时钟刻度线
+            ctx.closePath();
+        }
+        
+        
+        //时钟刻度线
+        for(var i=0;i<12;i++){  //画12个刻度线           
+            ctx.beginPath();
+            ctx.strokeStyle = "#000";             
+            ctx.lineWidth = 8 ;
+            ctx.moveTo(100,0);
+            ctx.lineTo(120,0);
+            ctx.stroke();
+            ctx.rotate(Math.PI/6); //每个30deg画一个时钟刻度线
+            ctx.closePath();
+        }
+        //外表盘
+        ctx.beginPath();
+        ctx.strokeStyle = "pink";
+        ctx.arc(0,0,145,0,Math.PI*2);
+        ctx.lineWidth = 12 ;
+        ctx.stroke();
+        ctx.closePath();
+        
+        //画时针
+        hour = hour>12?hour-12:hour;
+//              console.log(hour);
+        ctx.beginPath();
+        ctx.save();
+        ctx.rotate(Math.PI/6*hour+Math.PI/6*min/60+Math.PI/6*sec/3600);
+        ctx.strokeStyle = "yellowgreen";
+        ctx.lineWidth = 4 ;
+        ctx.moveTo(-20,0);
+        ctx.lineTo(50,0);
+        ctx.stroke();
+        ctx.restore();
+        ctx.closePath();
+        
+        
+        //画分针
+//              console.log(min);
+        ctx.beginPath();
+        ctx.save();
+        ctx.rotate(Math.PI/30*min+Math.PI/30*sec/60);
+        ctx.strokeStyle = "springgreen";
+        ctx.lineWidth = 3 ;
+        ctx.moveTo(-30,0);
+        ctx.lineTo(70,0);
+        ctx.stroke();
+        ctx.restore();
+        ctx.closePath();
+        
+        
+        //画秒针
+        ctx.beginPath();
+        ctx.save();
+        ctx.rotate(Math.PI/30*sec);
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 2 ;
+        ctx.moveTo(-40,0);
+        ctx.lineTo(120,0);
+        ctx.stroke();
+        ctx.restore();
+        ctx.closePath();
+        
+        ctx.restore();
+    }
+    clock();
+    setInterval(clock,1000);
+</script>
+</html>

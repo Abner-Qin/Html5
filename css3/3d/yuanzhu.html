@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>标题</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+<style>
+	div{width:200px;
+		height:300px;
+		position:relative;
+		margin:200px auto;
+		transform-style:preserve-3d;
+		perspective:25000px;
+		animation: move1 3s linear infinite;
+		transform:rotateY(10deg) rotateX(-10deg) rotateZ(0deg);
+	}
+	img{width:200px;height:300px;position:absolute;}
+	@keyframes move1{
+		0%{transform:rotateX(-10deg) rotateY(-60deg);}
+		20%{transform:rotateX(-10deg) rotateY(-120deg);}
+		40%{transform:rotateX(-10deg) rotateY(-180deg);}
+		60%{transform:rotateX(-10deg) rotateY(-240deg);}
+		80%{transform:rotateX(-10deg) rotateY(-300deg);}
+		100%{transform:rotateX(-10deg) rotateY(-360deg);}
+		
+		
+
+
+
+	}
+	img:nth-child(1){transform:rotateY(0deg) translateZ(400px);}
+	img:nth-child(2){transform:rotateY(30deg) translateZ(400px);}
+	img:nth-child(3){transform:rotateY(60deg) translateZ(400px);}
+	img:nth-child(4){transform:rotateY(90deg) translateZ(400px);}
+	img:nth-child(5){transform:rotateY(120deg) translateZ(400px);}
+	img:nth-child(6){transform:rotateY(150deg) translateZ(400px);}
+	img:nth-child(7){transform:rotateY(180deg) translateZ(400px);}
+	img:nth-child(8){transform:rotateY(210deg) translateZ(400px);}
+	img:nth-child(9){transform:rotateY(240deg) translateZ(400px);}
+	img:nth-child(10){transform:rotateY(270deg) translateZ(400px);}
+	img:nth-child(11){transform:rotateY(300deg) translateZ(400px);}
+	img:nth-child(12){transform:rotateY(330deg) translateZ(400px);}
+</style>
+<body>
+<div>
+	
+		
+			<img src="images/01.jpg" alt="">
+			<img src="images/02.jpg" alt="">
+			<img src="images/03.jpg" alt="">
+			<img src="images/04.jpg" alt="">
+			<img src="images/05.jpg" alt="">
+			<img src="images/06.jpg" alt="">
+			<img src="images/07.jpg" alt="">
+			<img src="images/08.jpg" alt="">
+			<img src="images/09.jpg" alt="">
+			<img src="images/10.jpg" alt="">
+			<img src="images/11.jpg" alt="">
+			<img src="images/12.jpg" alt="">
+		
+	</div>
+
+	
+	
+</body>
+</html>

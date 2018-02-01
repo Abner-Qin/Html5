@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style>
+		.pname{
+			font-family: "微软雅黑";
+			font-size: 20px;
+			background: #D1D3D6;
+			width: 70px;
+			padding: 20px;
+			position: relative;
+			display: inline-block;
+			
+		}
+		.vs{
+			font-family: "微软雅黑";
+			font-size: 20px;
+			color: red;
+			position: relative;
+			display: inline-block;
+		}
+		.pkbtn {
+			font-family: "微软雅黑";	font-size: 28px;
+			background: linear-gradient(rgba(219,219,219,0.9) 48%, rgba(169,169,169,0.7) 48%);
+			border-radius: 3px;	width: 100px;
+			border-style: solid; border-width: thin; border-color: darkgreen;
+			position: relative;
+			margin: auto;
+			cursor: pointer;
+		} 
+		.pkcontent {
+			font-family: "微软雅黑";	font-size: 16px;
+			border-radius: 3px;	width: 600px;
+			position: relative;
+			margin: auto;
+		}
+	</style>
+	<script type="text/javascript" src="player.js" ></script>
+	<script type="text/javascript" src="judge.js" ></script>
+	
+	<script>
+		
+		var namelist = ['张三',
+'张三1',
+'张三2',
+'张三3',
+'张三4',
+'张三5',
+'张三6',
+'张三7',
+'张三8',
+'张三9',
+'李四']; 
+		
+		window.onload = function() {
+			
+			ele1 = document.getElementsByClassName("pname")[0];
+			index = parseInt(Math.random()*10);
+			ele1.innerHTML = namelist[index];
+			playerA = new Player(namelist[index],ele1,300);
+			
+			index = parseInt(Math.random()*10);
+			ele2 = document.getElementsByClassName("pname")[1];
+			ele2.innerHTML = namelist[index];
+			playerB = new Player(namelist[index],ele2,300);
+			
+			playerA.enemy = playerB;
+			playerB.enemy = playerA;
+			
+			judger = new Judge();
+			judger.attacker = playerA;
+			
+			
+		}
+		
+		function startPK(){
+			judger.begin();
+		}
+		
+	</script>
+	<body>
+		<p style="">
+			<div class="pname" style="left:500px">键盘侠</div>
+			<div class="vs" style="left: 550px;">VS</div>
+			<div class="pname" style="left:600px">小龙虾</div>
+		</p>
+		<p></p>
+		<p>
+			<div class="pkbtn" onclick="startPK()">开始PK</div>
+		</p>
+		<p>
+			<div class="pkcontent">
+			
+			</div>
+		</p>
+		<div id="msg_end" style="height:0px; overflow:hidden"></div>
+	</body>
+</html>

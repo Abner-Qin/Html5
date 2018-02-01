@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="ico/iconfont.css">
+	<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+	<style>
+*{margin:0;padding:0;}
+#out{width:640px;margin:0 auto;overflow:hidden;}
+header{height:80px;background:#007a74;overflow: hidden;color:#fff;font-size:34px;}
+header span{float:left;width: 33%;height:80px;line-height:80px;}
+header span:nth-child(3){text-align:right;}
+header span:nth-child(2){text-align:center;}
+.part2{width:640px;height:85px;line-height:85px;overflow:hidden;}
+.part2 input{width:462px;height:58px;border:1px solid #ccc;border-radius:10px;float:left;margin-left:11px;margin-top:15px;}
+.part2 span{background: #007af4;color:#fff;font-size:24px;float:left;width:142px;height:52px;text-align:center;line-height:52px;margin-top:20px;border-radius:10px;margin-left:13px;}
+.img{width:640px;height:300px;overflow:hidden;}
+.img img{width:640px;height:300px;}
+.part3{width:640px;height:100px;background: #f5f5f5;overflow:hidden;}
+.p3_l,.p3_c,.p3_r{float:left;margin-top:25px;}
+.p3_l{margin-left:26px;color:#037bf4;color:#666;}
+.p3_c{margin-left:27px;color:#666;}
+.p3_c1{font-size:24px;}
+.p3_c2{font-size:20px;}
+.p3_r{margin-right:18px;color:#666;font-size:24px;float:right;}
+.part4{width:640px;overflow:hidden;padding-bottom:160px;}
+ul{width:640px;overflow:hidden;height:184px;list-style:none;border-bottom:1px solid #ccc;}
+ul li{float:left;width:210px;text-align:center;font-size:24px;color:#333;border-right:1px solid #ccc;padding:25px 0;}
+
+
+	</style>
+
+
+
+
+</head>
+<body>
+	<div id='out'>
+<header>
+<span><i class="iconfont">&#xe662;</i></span>
+<span>龙山家园</span>
+<span><i class="iconfont">&#xe660;</i></span>
+</header>
+<div class="part2">
+<input type="search" name="" value=""results placeholder='search'>
+<span>我要发布</span>
+</div>
+<div class="img"><img src="1.jpg" alt=""></div>
+<div class="part3">
+<div class="p3_l"><i class="iconfont">&#xe714;</i></div>
+<div class="p3_c">
+<p class="p3_c1">多云/小雨&nbsp;27/30c</p>
+<p class="p3_c2" >3-4级/4-5级风</p>
+</div>
+<div class="p3_r">
+<p>星期一</p>
+<p>18:00</p>
+</div>
+</div>
+<div class="part4">
+<ul class="ul">
+<li><img src="2.png" alt="">
+<p>找家教</p>
+</li>
+<li><img src="2.png" alt="">
+<p>找家教</p>
+</li>
+<li style="border-right:0;"><img src="2.png" alt="">
+<p>找家教</p>
+</li>
+</ul>
+<!-- 2层 -->
+<ul>
+<li><img src="2.png" alt="">
+<p>找家教</p>
+</li>
+<li><img src="2.png" alt="">
+<p>找家教</p>
+</li>
+<li style="border-right:0;"><img src="2.png" alt="">
+<p>找家教</p>
+</li>
+</ul>
+
+</div>
+	</div>
+</body>
+<script>
+function bodyScale(){
+var devicewidth=document.documentElement.clientWidth;
+	var scale=devicewidth/640;
+	document.body.style.zoom=scale;
+}
+window.onload=window.onresize=function(){
+	bodyScale();
+}
+</script>
+</html>

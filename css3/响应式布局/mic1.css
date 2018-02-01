@@ -1,0 +1,45 @@
+*{margin:0;padding:0;list-style:none;}
+	html,body{width:100%;height:100%;}
+	body{display:-webkit-box;background:#fff;font-family: wf_segoe-ui_semilight,wf_segoe-ui_light,wf_segoe-ui_normal,'Segoe UI Semilight','Segoe UI Light','Segoe UI',Arial,sans-serif !important;-webkit-box-orient:vertical;}
+	header,section,footer{width:100%;}
+	header{height:50px;display:-webkit-box;line-height:50px;}
+	header p{padding-left:50px;margin-right:50px;cursor: pointer;}
+	.i{padding-right:20px;}
+	header ul{opacity:0;}
+	
+	header b{-webkit-box-flex:1;display:-webkit-box;cursor: pointer;}
+	header b input{opacity:0;}
+	.d2{margin-top:8px;width: 33px;height: 36px;line-height:36px;}
+	.i2{width:17px;height:17px;cursor: pointer;padding-left:170px;}
+	.d1{padding-left:180px;cursor: pointer;}
+	.i3{padding-right:10px;}
+	section{-webkit-box-orient:vertical;display:-webkit-box;margin-bottom:50px;}
+	section i{display:block;height:294px;background:url(13.jpg) no-repeat;margin-bottom:30px;}
+	
+	section ul li{margin-right:30px;float:left;margin-bottom:50px;}
+	section ul li:nth-child(1){margin-left:50px;}
+	section ul li:nth-child(2){margin-right:0;}
+	section ul li:nth-child(3){margin-left:50px;}
+	section ul li:hover{opacity:0.6;}
+	section ul li img{width:320px;height:180px;}
+	section ul li p{font-size:16px;padding-top:10px;text-align:center;margin-bottom:20px;}
+	section ul li em{padding-left:60px;font-style:normal}
+	section figure{height:237px;background:url(140.jpg) no-repeat;margin-bottom:20px;}
+	
+	section p{margin-bottom:50px;line-height:50px;padding-top:30px;text-align:center;font-size:30px;}
+	section aside{height:294px;background:url(15.jpg) no-repeat;margin-bottom:20px;}
+	footer{height:530px;display:-webkit-box;background: #F2F2F2;color: #626262;-webkit-box-orient:vertical;}
+	.footer-top{-webkit-box-flex:1;padding-top:20px;}
+	
+
+	.footer-top ul{width:230px;cursor:pointer;float:left;margin-bottom:20px;}
+	.footer-top ul:nth-child(1){margin-left:90px;}
+	.footer-top ul:nth-child(4){padding-right:200px;margin-left:90px;}
+	.footer-top ul:nth-child(5){margin-right:10px;}
+	.footer-top ul li{margin-bottom:10px;font-size:14px;}
+	.footer-top ul li:hover{text-decoration:underline;}
+	.footer-bottom{margin-left:100px;padding-top:20px;font-size:14px;}
+
+	.footer-bottom img{line-height:10px;margin-right:10px;float:left;}
+	.footer-bottom p{padding-top:2px;}
+	.footer-bottom b{float:left;font-weight:normal;margin-top:10px;}

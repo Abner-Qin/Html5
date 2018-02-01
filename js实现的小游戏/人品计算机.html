@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	table{border:3px solid #6d6d6d;background:#F9F;margin:30px auto;}
+</style>
+</head>
+
+<body>
+<table border='1'>
+	<tr>
+    	<th colspan='3'>人品计算器</th>
+    </tr>
+    <tr align='center'>
+    	<td>请输入姓名</td>
+        <td><input id='txt1' type='text' /></td>
+        <td><input id='btn' type='button' value='计算' /></td>
+    </tr>
+    <tr align='center'>
+    	<td>结果</td>
+        <td colspan='2'><textarea id='txt2' cols='30' rows='6'></textarea></td>
+    </tr>
+    <tr align='center'>
+    	<td colspan='3'><input id='btn2' type='button' value='重置' /></td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+	var txt1=document.getElementById('txt1')
+	var txt2=document.getElementById('txt2')
+	var btn=document.getElementById('btn')
+	var btn2=document.getElementById('btn2')
+	txt1.onblur=function(){
+		var reg=/^[\u4e00-\u9fa5]{2,5}$/
+		if(!reg.test(txt1.value)){
+			alert('输入姓名格式错误！')	
+		}	
+	}
+	btn.onclick=function(){
+		var n=parseInt(Math.random()*100)
+		//alert(n)
+		if(n<10){
+			txt2.value=n+'分\n您的人品也忒差了。'
+		}else if(n>=10&&n<40){
+			txt2.value=n+'分\n人品是中等靠下的，属于很差'	
+		}else if(n>=40&&n<60){
+			txt2.value=n+'分\n人品依旧属于差的范围，好好努力会成良的哈哈'	
+		}else if(n>=60&&n<80){
+			txt2.value=n+'分\n人品是不错哦，继续努力 争取更好'	
+		}else if(n>=80&&n<100){
+			txt2.value=n+'分\n人品很好，请问你是怎么做到的呢'	
+		}				
+	}
+	btn2.onclick=function(){
+		txt1.value=''
+		txt2.value=''	
+	}
+	
+</script>
+</body>
+</html>

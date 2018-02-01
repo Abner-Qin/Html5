@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+body{padding:0; margin:0;}
+#div1{width:100%; height:100%; background:url(img/bg.jpg) no-repeat; position:absolute; background-size:cover;}
+img{width:18px; height:18px; position:absolute;}
+</style>
+<script src="js/jquery-1.11.3.js"></script>
+<script type="text/javascript">
+// 构造萤火虫FireWorm
+
+function FireWorm(){
+	
+	this.element = $('<img src="img/1.jpg"/>');
+
+}
+
+// 显示萤火虫 show
+FireWorm.prototype.show = function(){
+	
+	this.element.css({'top':this.pointY+'px','left':this.pointX+'px'})
+
+	$('body').append(this.element);
+	
+	return this;
+	
+}
+
+
+
+
+// 随机位置 newPoint
+
+FireWorm.prototype.newPoint = function(){
+
+	this.pointX = randomInt(window.innerWidth)-100;
+	this.pointY = randomInt(window.innerHeight)-100;
+	return this;
+	
+}
+
+
+// 随机时间 speed
+FireWorm.prototype.speed = function(){
+	return this.speedRun = (randomInt(10)+5)*1000	
+	
+}
+
+// 随机函数 randomInt
+function randomInt(maxNum){
+	
+	return  Math.floor(Math.random()*maxNum);
+
+
+}
+
+
+// 飞  fly
+FireWorm.prototype.fly = function(){
+	
+	var _this = this
+	this.element.animate({'top':this.pointY+'px','left':this.pointX+'px'},this.speed(),function(){
+					_this.newPoint();
+					_this.speed();
+					_this.fly();
+					
+	})	
+	
+}
+
+
+// 随机时间  随机位置   显示   随机位置   飞（随机时间 随机位置  飞）
+
+$(function(){
+		   
+	/*var f = new FireWorm();
+	f.newPoint();
+	f.speed();
+	f.show();
+	f.newPoint();
+	f.fly();*/
+	
+	 var arr=[]
+  for(var i = 0; i < 30; i++){
+	 arr[i] = new FireWorm();
+	 arr[i].newPoint();
+	 arr[i].show();
+	 arr[i].newPoint();
+	 arr[i].speed();
+	 arr[i].fly();
+	  
+  }	   
+})
+
+</script>
+</head>
+
+<body>
+<div id="div1"></div>
+</body>
+</html>

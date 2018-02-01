@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<style>
+*{margin:0;padding:0;list-style:none;}
+div{width:200px;height:400px;margin:150px auto;perspective: 1200px; }
+ul{width:200px;height:400px;position:relative;transform-style:preserve-3d;margin:50px auto;animation:move1 5s linear infinite}
+li{width:200px;height:400px;position:absolute;font-size:35px;color:white;line-height:200px;text-align: center;}
+@keyframes move1{
+		0%{transform:scale(0.8,0.8) rotateX(0deg) rotateY(0deg);}
+		50%{transform:scale(0.6,0.6) rotateX(180deg) rotateY(180deg);}
+		100%{transform:scale(0.4,0.4) rotateX(360deg) rotateY(360deg);}
+	}
+
+
+li:nth-child(1){
+	background:rgba(9,116,15,0.2);
+	transform: translateZ(100px);
+}
+li:nth-child(2){
+	
+	
+	background:rgba(178,54,54,0.2);
+	transform: rotateY(90deg) translateZ(100px);
+}
+li:nth-child(3){
+	width:200px;
+	height:200px;
+	background:rgba(188,58,210,0.2);
+	transform: rotateX(90deg) translateZ(100px);
+}
+li:nth-child(4){
+	width:200px;
+	height:200px;
+	background:rgba(220,174,131,0.2);
+	transform: rotateX(-90deg) translateZ(300px);
+}
+li:nth-child(5){
+	
+	background:rgba(123,140,192,0.2);
+	transform: rotateY(-90deg) translateZ(100px);
+}
+li:nth-child(6){
+	background:rgba(139,18,140,0.2);
+	transform: rotateY(180deg) translateZ(100px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+	</style>
+
+</head>
+<body>
+<div>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li>
+	</ul>
+	</div>
+</body>
+</html>

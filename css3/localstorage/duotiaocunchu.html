@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<style>
+	*{margin:0;padding:0;}
+	fieldset{width:600px;margin:20px auto;text-align:center;}
+	input{width:500px;height:50px;margin-top:20px;}
+	#show{margin-top:30px;}
+	</style>
+</head>
+<body>
+	<fieldset>
+	<legend>localStorage 案例</legend>
+	<input type="text" name="" id="text" value="">
+	<input type="button" name="" id="btn1" value="保存数据">
+	<input type="button" name="" id="btn2" value="读取数据">
+	<div id="show"></div>
+	</fieldset>
+</body>
+<script>
+var text=document.getElementById('text')
+var btn1=document.getElementById('btn1')
+var btn2=document.getElementById('btn2')
+var show=document.getElementById('show')
+var arr=[];
+	btn1.onclick=function(){
+	var txt=text.value;
+	arr.push(txt);
+	var aa=JSON.stringify(arr);
+	localStorage.setItem('message',aa);
+	text.value='';
+}
+
+	btn2.onclick=function(){
+	var str=localStorage.getItem('message');
+	var str1=JSON.parse(str)
+	for (var i = 0; i<str1.length; i++) {
+		show.innerHTML+=str1[i]+"<br/>"
+	}
+	
+}
+</script>
+</html>

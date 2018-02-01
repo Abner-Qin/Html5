@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+	.tab{background:#FCF;}
+</style>
+<script>
+	window.onload=function(){
+		var txt1=document.getElementById('txt1')
+		var txt2=document.getElementById('txt2')
+		var txt3=document.getElementById('txt3')
+		var btn1=document.getElementById('btn1')
+		var btn2=document.getElementById('btn2')
+		var btn3=document.getElementById('btn3')
+		var btn4=document.getElementById('btn4')
+		
+		txt1.onblur=function(){
+			var reg=/^\d+$/
+			var num1=txt1.value;
+			if(!reg.test(num1)){
+				alert('只能输入数字!')	
+			}	
+		}	
+		txt2.onblur=function(){
+			var reg=/^\d+$/
+			var num2=txt2.value;
+			if(!reg.test(num2)){
+				alert('只能输入数字!')	
+			}	
+		}
+		
+		
+		btn1.onclick=function(){
+			var a=parseInt(txt1.value),b=parseInt(txt2.value)
+			txt3.value=a+b;		
+		}	
+		btn2.onclick=function(){
+			var a=parseInt(txt1.value),b=parseInt(txt2.value)
+			txt3.value=a-b;		
+		}
+		btn3.onclick=function(){
+			var a=parseInt(txt1.value),b=parseInt(txt2.value)
+			txt3.value=a*b;		
+		}	
+		btn4.onclick=function(){
+			var a=parseInt(txt1.value),b=parseInt(txt2.value)
+			txt3.value=a/b;		
+		}	
+		res.onclick=function(){
+			txt1.value=''
+			txt2.value=''
+			txt3.value=''	
+		}		
+	}
+</script>
+</head>
+
+<body>
+<table class='tab' border='1'>
+	<tr>
+    	<th colspan='3'>计算器</th>
+    </tr>
+    <tr>
+    	<td>第一个数：</td>
+        <td><input id='txt1' type='text' value=''/></td>
+        <td rowspan='2'>
+        	<input id='btn1' type='button' value='+'>
+            <input id='btn2' type='button' value='-'>
+            <input id='btn3' type='button' value='*'>
+            <input id='btn4' type='button' value='/'>
+        </td>
+    </tr>
+    <tr>
+    	<td>第二个数：</td>
+        <td><input id='txt2' type='text' value=''/></td>
+    </tr>
+    <tr align='center'>
+    	<td>计算结果：</td>
+        <td><input id='txt3' type='text' value=''/></td>
+        <td><input id='res' value='重置' type='button' /> </td>
+    </tr>
+</table>
+</body>
+</html>

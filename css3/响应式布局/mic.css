@@ -1,0 +1,44 @@
+*{margin:0;padding:0;list-style:none;}
+	html,body{width:100%;height:100%;}
+	body{display:-webkit-box;background:#fff;font-family: wf_segoe-ui_semilight,wf_segoe-ui_light,wf_segoe-ui_normal,'Segoe UI Semilight','Segoe UI Light','Segoe UI',Arial,sans-serif !important;-webkit-box-orient:vertical;}
+	header,section,footer{width:100%;}
+	header{height:50px;display:-webkit-box;line-height:50px;}
+	header p{padding-left:50px;margin-right:50px;cursor: pointer;}
+	.i{padding-right:20px;}
+	header ul{display:-webkit-box;cursor: pointer;}
+	header ul li{-webkit-box-flex:1;margin-right:50px;color: #2F2F2F;}
+	.i1{margin-left:10px;}
+	header b{display:block;margin-left:300px;-webkit-box-flex:1;display:-webkit-box;cursor: pointer;}
+	header b input{width:244px;height:36px;outline:0;padding: 0 10px;border: 1px solid #A9A9A9;border-right: 0;color: #2F2F2F;}
+	.d2{margin-top:8px;width: 33px;height: 36px;border: 1px solid #A9A9A9;border-left: 0;line-height:36px;}
+	.i2{width:17px;height:17px;cursor: pointer;}
+	.d1{padding-left:100px;cursor: pointer;}
+	.i3{padding-right:10px;}
+	section{-webkit-box-orient:vertical;display:-webkit-box;margin-bottom:50px;}
+	section i{display:block;height:470px;background:url(1.jpg) no-repeat;margin-bottom:30px;}
+	section ul{display:-webkit-box;margin-bottom:50px;}
+	section ul li{-webkit-box-orient:horizontal;margin-right:30px;}
+	section ul li:nth-child(1){margin-left:100px;}
+	section ul li:hover{opacity:0.6;}
+	section ul li img{width:288px;height:170px;}
+	section ul li p{font-size:16px;padding-top:10px;text-align:center;margin-bottom:20px;}
+	section ul li em{padding-left:30px;font-style:normal}
+
+	section figure{height:430px;background:url(6.jpg) no-repeat;margin-bottom:20px;}
+
+	section p{margin-bottom:50px;line-height:50px;padding-top:30px;text-align:center;font-size:30px;}
+	
+	section aside{height:534px;background:url(11.jpg) no-repeat;margin-bottom:20px;}
+
+	footer{height:300px;display:-webkit-box;background: #F2F2F2;color: #626262;-webkit-box-orient:vertical;}
+	.footer-top{-webkit-box-flex:1;padding-top:20px;display:-webkit-box;}
+	
+
+	.footer-top ul{width:200px;cursor:pointer;}
+	.footer-top ul:nth-child(1){margin-left:100px;}
+	.footer-top ul li{margin-bottom:10px;font-size:14px;}
+	.footer-top ul li:hover{text-decoration:underline;}
+	.footer-bottom{display:-webkit-box;-webkit-box-flex:1;margin-left:100px;padding-top:20px;font-size:14px;}
+	
+	.footer-bottom img{line-height:10px;margin-right:10px;}
+	.footer-bottom b{padding-left:200px;font-weight:normal;}

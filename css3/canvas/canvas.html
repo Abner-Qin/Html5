@@ -1,0 +1,248 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<style>
+*{margin:0;padding:0;}
+div{width:800px;height:500px;border:1px solid red;margin:100px auto;}
+	</style>
+
+
+</head>
+<body>
+<div>
+	<canvas id="cvs" width="800" height="500"></canvas>
+</div>
+</body>
+<script>
+var cvs=document.getElementById('cvs')
+var ctx=cvs.getContext('2d')
+// var x=0,y=0,z=true,s=true;
+// setInterval(function(){
+// 	ctx.clearRect(0,0,cvs.width,cvs.height);
+// 	if(z){
+// 		x++;
+// 		if(x>=(cvs.width-50)){
+// 			z=false;
+// 		}
+// 	}else{x--;
+// if(x<=0){
+// 	z=true;
+// 	}
+// }
+
+// if(s){
+// 		y++;
+// 		if(y>=(cvs.height-50)){
+// 			s=false;
+// 		}
+// 	}else{y--;
+// if(y<=0){
+// 	s=true;
+// 	}
+// }
+// ctx.fillStyle='green';
+// ctx.fillRect(x,y,50,50)
+
+// },1)
+// 矩形
+// ctx.beginPath();
+// ctx.moveTo(10,10);
+// ctx.lineTo(210,10);
+// ctx.lineTo(210,210);
+// ctx.lineTo(10,210);
+// ctx.closePath();
+// ctx.strokeStyle='red';
+// ctx.lineWidth=10;
+// ctx.stroke();
+// ctx.fillStyle="blue";
+// ctx.fill();
+// 矩阵矩形
+// ctx.beginPath();
+// ctx.rect(10,10,200,200);
+// ctx.strokeStyle='red';
+// ctx.lineWidth=5;
+// ctx.stroke();
+// ctx.closePath();
+// 填充
+// ctx.beginPath();
+// ctx.fillStyle="red";
+// ctx.fillRect(10,10,200,200);
+// ctx.fillStyle="blue";
+// ctx.fillRect(40,40,200,200);
+// ctx.fillStyle="yellow";
+// ctx.fillRect(70,70,200,200);
+// ctx.fillStyle="green";
+// ctx.fillRect(100,100,200,200);
+// 圆形
+// ctx.beginPath();
+// ctx.arc(200,200,200,0,2*Math.PI,true);
+// ctx.closePath();
+// ctx.strokeStyle='red';
+// ctx.stroke();
+// ctx.beginPath();
+// ctx.arc(100,200,100,0,2*Math.PI,true);
+// ctx.closePath();
+// ctx.strokeStyle='red';
+// ctx.stroke();
+// ctx.beginPath();
+// ctx.arc(50,200,50,0,2*Math.PI,true);
+// ctx.closePath();
+// ctx.strokeStyle='red';
+// ctx.stroke();
+// 二次贝塞尔曲线
+// ctx.beginPath();
+// ctx.moveTo(99,65);
+// ctx.quadraticCurveTo(375,215,419,54);
+// ctx.strokeStyle='red';
+// ctx.stroke();
+// 三次贝塞尔曲线
+// ctx.beginPath();
+// ctx.moveTo(165,30);
+// ctx.bezierCurveTo(27,272,434,3,463,244);
+// ctx.strokeStyle='red';
+// ctx.stroke();
+
+// 飞机
+ctx.beginPath();
+ctx.moveTo(165,134);
+ctx.quadraticCurveTo(199,11,233,133);
+ctx.fillStyle='#CCCCCC';
+ctx.fill();
+
+ctx.beginPath();
+ctx.rect(166,132,66,150);
+ctx.fillStyle='#CCCCCC';
+ctx.fill();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.moveTo(166,282);
+ctx.quadraticCurveTo(198,520,232,282);
+ctx.fillStyle='#cccccc';
+ctx.fill();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.moveTo(50,100);
+ctx.lineTo(167,200);
+ctx.lineTo(20,310);
+ctx.lineTo(100,210);
+ctx.closePath();
+ctx.strokeStyle='#555555';
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(310,100);
+ctx.lineTo(230,200);
+ctx.lineTo(400,310);
+ctx.lineTo(300,210);
+ctx.closePath();
+ctx.strokeStyle='#555555';
+ctx.stroke();
+
+ctx.beginPath();
+
+ctx.lineTo(170,300);
+ctx.lineTo(20,410);
+ctx.lineTo(100,310);
+ctx.closePath();
+ctx.fillStyle='#cccccc';
+ctx.fill();
+
+
+
+ctx.beginPath();
+
+ctx.lineTo(230,300);
+ctx.lineTo(400,410);
+ctx.lineTo(300,310);
+ctx.closePath();
+ctx.fillStyle='#cccccc';
+ctx.fill();
+ctx.closePath();
+
+ctx.beginPath();
+ctx.fillStyle='red';
+ctx.fill();
+ctx.font='bold 30px 微软雅黑'
+ctx.fillText('胜',182,150)
+ctx.fillText('利',182,200)
+ctx.fillText('飞',182,250)
+ctx.fillText('燕',182,300)
+ctx.fillText('号',182,350)
+
+
+// 胜利号
+// ctx.beginPath();
+// ctx.rect(100,100,200,30);
+// ctx.fillStyle='#000';
+// ctx.fill();
+// ctx.closePath();
+// ctx.rect(50,130,300,30);
+// ctx.fillStyle='#000';
+// ctx.fill();
+// ctx.closePath();
+
+// ctx.beginPath();
+// ctx.moveTo(0,160);
+// ctx.lineTo(400,160);
+// ctx.lineTo(350,190);
+// ctx.lineTo(50,190);
+// ctx.closePath();
+// ctx.fillStyle='#555555';
+// ctx.fill();
+
+// ctx.rect(200,0,10,150);
+// ctx.fillStyle='#000';
+// ctx.fill();
+// ctx.closePath();
+// ctx.rect(210,0,50,20);
+// ctx.fillStyle='#000';
+// ctx.fill();
+
+// ctx.beginPath();
+// ctx.fillStyle='red';
+// ctx.fill();
+// ctx.font='bold 30px 微软雅黑'
+// ctx.fillText('胜利号',150,170)
+
+// 渐变、清除
+// var lg= ctx.createLinearGradient(10,10,200,20)
+// lg.addColorStop(0.1,'red')
+// lg.addColorStop(0.3,'green')
+// lg.addColorStop(0.5,'blue')
+// lg.addColorStop(0.7,'yellow')
+// lg.addColorStop(0.9,'pink')
+// ctx.fillStyle=lg;
+// ctx.fillRect(20,20,150,100);
+// ctx.clearRect(10,10,50,100);
+
+// ctx.beginPath();
+// ctx.arc(200,200,100,0,2*Math.PI,true);
+// ctx.closePath();
+// ctx.fillStyle='red';
+// ctx.fill();
+// ctx.globalCompositeOperation='destination-atop';
+// ctx.beginPath();
+// ctx.arc(250,200,100,0,2*Math.PI,true);
+// ctx.closePath();
+// ctx.fillStyle='blue';
+// ctx.fill();
+
+// 阴影
+// ctx.shadowColor="red";
+// ctx.shadowBlur=20;
+// ctx.shadowOffsetX=5;
+// ctx.shadowOffsetY=5;
+// ctx.fillStyle="blue";
+// ctx.fillRect(20,20,100,80);
+
+
+
+
+</script>
+</html>

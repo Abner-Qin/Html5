@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>发布</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+</head>
+<style>
+	*{
+		margin:0;
+		padding:0;
+	}
+	#div1{
+		width:500px;
+		margin:30px auto;
+		padding:20px 10px 10px 10px;
+		background:#E7E7E7;
+	}
+	span{
+		display:block;
+		
+	}
+	header input{
+		width:450px;
+		height:30px;
+		outline:none;
+	}
+	section{
+		padding-top:10px;
+	}
+	section textarea{
+		outline: none;
+	}
+	section b{
+		display:block;
+		font-weight:normal;
+		text-align: right;
+		font-size:14px;
+		color:green;
+	}
+	section b strong{
+		font-weight:normal;
+	}
+	footer{
+		padding-top:10px;
+	}
+	footer input{
+		width:100px;
+		height:40px;
+		cursor:pointer;
+	}
+	footer b{
+		display:block;
+		font-size: 30px;
+		padding-top:10px;
+
+	}
+	figure b{
+		display:block;
+		background:#B7B7B7;
+		overflow: hidden;
+		padding:5px 2px;
+		margin:5px 0;
+
+	}
+	figure b em{
+		float:left;
+		font-style:normal;
+	}
+	figure b a{
+		float:right;
+		text-decoration:none;
+		color:red;
+		cursor:pointer;
+		padding-left:10px;
+	}
+	figure span{
+		padding-left:30px;
+	}
+</style>
+<body>
+	<div id="div1">
+		<header>
+			<span>标题:</span>
+			<input id='text' type="text" name="" value="">
+		</header>
+		<section>
+			<span>内容:</span>
+			<textarea id='area' name="" id="" cols="62" rows="8"></textarea>
+			<b>还可以输入<strong id='strong'>200</strong>字</b>
+		</section>
+		<footer>
+			<input id='btn' type="button" name="" value="发布">
+			<b>显示内容</b>
+		</footer>
+	</div>
+</body>
+<script>
+	var 
+		otext=document.getElementById('text')
+		oarea=document.getElementById('area')
+		ostrong=document.getElementById('strong')
+		obtn=document.getElementById('btn')
+		odiv=document.getElementById('div1')
+
+		oarea.onfocus=function(){
+			oarea.onkeyup=function(){
+				var val=oarea.value.length
+				ostrong.innerHTML=200-val
+			}
+		}
+		obtn.onclick=function(){
+			var 
+				ofigure=document.createElement('figure')
+				ob=document.createElement('b')
+				oa=document.createElement('a')
+				oem=document.createElement('em')
+				ospan=document.createElement('span')
+
+			oem.innerHTML=otext.value
+			oa.innerHTML='X'
+			ospan.innerHTML=oarea.value
+			ob.appendChild(oem)
+			ob.appendChild(oa)
+			ofigure.appendChild(ob)
+			ofigure.appendChild(ospan)
+			odiv.appendChild(ofigure)
+			otext.value=''
+			oarea.value=''
+			ostrong.innerHTML=200
+
+			var 
+				alink=document.getElementsByTagName('a')
+				afigure=document.getElementsByTagName('figure')
+			for(var i=0;i<alink.length;i++){
+				alink[i].index=i
+				alink[i].onclick=function(){
+					afigure[this.index].style.display='none'
+				}
+			}
+
+		}
+		
+
+
+</script>
+</html>

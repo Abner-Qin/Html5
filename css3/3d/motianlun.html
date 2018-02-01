@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<style>
+body{background:url(image/2.jpg) no-repeat;}
+	*{margin:0;padding:0;list-style: none;}
+	.q{position:absolute;left:420px;top:310px;transform:rotateZ(7deg);}
+	.W{position:absolute;left:510px;top:495px;transform:rotateZ(7deg);}
+	ul{width:768px;height:768px;background:url(image/9.png) no-repeat;margin:0   auto;position:relative;animation:move1 10s linear infinite;}
+	li{position:absolute;animation:move2 10s linear infinite;transform-origin:center top;}
+	
+	@keyframes move1{
+		0%{transform:rotate(0deg);}
+		100%{transform:rotate(360deg);}
+	}
+	@keyframes move2{
+		0%{transform:rotate(0deg);}
+		100%{transform:rotate(-360deg);}
+	}
+li:nth-child(1){left:330px;top:50px;}
+li:nth-child(2){left:100px;top:150px;}
+li:nth-child(3){right:100px;top:150px;}
+li:nth-child(4){left:0px;top:380px;}
+li:nth-child(5){right:0px;top:380px;}
+li:nth-child(6){left:100px;top:600px;}
+li:nth-child(7){right:100px;top:600px;}
+li:nth-child(8){left:330px;bottom:-100px;}
+
+
+
+
+
+
+
+
+
+	</style>
+
+</head>
+<body>
+	<ul>
+	
+		<li><img src="image/1.png" alt=""></li>
+		<li><img src="image/2.png" alt=""></li>
+		<li><img src="image/3.png" alt=""></li>
+		<li><img src="image/4.png" alt=""></li>
+		<li><img src="image/5.png" alt=""></li>
+		<li><img src="image/6.png" alt=""></li>
+		<li><img src="image/7.png" alt=""></li>
+		<li><img src="image/8.png" alt=""></li>
+	</ul>
+	<img class="q" src="image/big-title.png" alt="">
+	<img class="W" src="image/title.png" alt="">
+</body>
+</html>

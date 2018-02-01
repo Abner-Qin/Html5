@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<style>
+*{margin:0;padding:0;list-style:none;}
+body{background:url(images1/cross.jpg) repeat;}
+div{width:200px;height:200px;position:relative;transform-style:preserve-3d;margin:240px auto;animation:move2 10s linear infinite}
+p{width:200px;height:200px;position:absolute;color:white;font-size:35px;line-height:200px;text-align:center;transition:all 2s;}
+ul{width:100px;height:100px;position:absolute;left:50px;top:10px;transform-style:preserve-3d;margin:50px auto;animation:move1 10s linear infinite}
+li{width:100px;height:100px;position:absolute;font-size:35px;}
+img{width:100px;height:100px;}
+
+@keyframes move1{
+		0%{transform:rotateX(0deg) rotateY(0deg);}
+		50%{transform:rotateX(180deg) rotateY(180deg);}
+		100%{transform:rotateX(360deg) rotateY(360deg);}
+	}
+
+
+@keyframes move2{
+		0%{transform:rotateX(0deg) rotateY(0deg);}
+		50%{transform:rotateX(180deg) rotateY(180deg);}
+		100%{transform:rotateX(360deg) rotateY(360deg);}
+	}
+
+div:hover p:nth-child(1){background:rgba(70,30,30,0.5);
+	transform: translateZ(200px);
+}
+
+div:hover p:nth-child(2){background:rgba(31,167,65,0.5);
+	transform: rotateY(90deg) translateZ(200px);
+}
+
+div:hover p:nth-child(3){background:rgba(166,186,47,0.5);
+	transform: rotateX(90deg) translateZ(200px);
+}
+
+div:hover p:nth-child(4){background:rgba(186,125,47,0.5);
+	transform: rotateX(-90deg) translateZ(200px);
+}
+
+div:hover p:nth-child(5){background:rgba(130,133,163,0.5);
+	transform: rotateY(-90deg) translateZ(200px);
+}
+
+div:hover p:nth-child(6){background:rgba(129,87,116,0.5);
+	transform: rotateY(180deg) translateZ(200px);
+}
+
+
+p:nth-child(1){
+	background:rgba(70,30,30,0.5);
+	transform: translateZ(100px);
+}
+p:nth-child(2){
+	background:rgba(31,167,65,0.5);
+	transform: rotateY(90deg) translateZ(100px);
+}
+p:nth-child(3){
+	background:rgba(166,186,47,0.5);
+	transform: rotateX(90deg) translateZ(100px);
+}
+p:nth-child(4){
+	background:rgba(186,125,47,0.5);
+	transform: rotateX(-90deg) translateZ(100px);
+}
+p:nth-child(5){
+	background:rgba(130,133,163,0.5);
+	transform: rotateY(-90deg) translateZ(100px);
+}
+p:nth-child(6){
+	background:rgba(129,87,116,0.5);
+	transform: rotateY(180deg) translateZ(100px);
+}
+
+
+li:nth-child(1){
+	
+	transform: translateZ(50px);
+}
+li:nth-child(2){
+	
+	transform: rotateY(90deg) translateZ(50px);
+}
+li:nth-child(3){
+	
+	transform: rotateX(90deg) translateZ(50px);
+}
+li:nth-child(4){
+	
+	transform: rotateX(-90deg) translateZ(50px);
+}
+li:nth-child(5){
+	
+	transform: rotateY(-90deg) translateZ(50px);
+}
+li:nth-child(6){
+	
+	transform: rotateY(180deg) translateZ(50px);
+}
+
+
+
+
+
+
+	</style>
+
+</head>
+<body>
+
+<div>
+	<p>1</p>
+	<p>2</p>
+	<p>3</p>
+	<p>4</p>
+	<p>5</p>
+	<p>6</p>
+	<ul class="u2">
+		<li><img src="images1/cross1.png"/></li>
+		<li><img src="images1/cross2.png"/></li>
+		<li><img src="images1/cross3.png"/></li>
+		<li><img src="images1/cross4.jpg"/></li>
+		<li><img src="images1/cross5.png"/></li>
+		<li><img src="images1/cross6.png"/></li>
+	</ul>
+
+	
+</div>
+</body>
+</html>

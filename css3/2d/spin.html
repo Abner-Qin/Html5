@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>spin</title>
+	<style type="text/css">
+	ul li{width:100px;height:100px;background:#ccc;float:left;margin:20px 20px;list-style:none;}
+	li:nth-child(1){transform:translate(20px,20px);}
+	li:nth-child(2){transform:rotate(45deg);/*transform-origin:left top;*/}
+	li:nth-child(3){transform:scale(0.5,0.5);}
+	li:nth-child(4){transform:skew(30deg,40deg);}
+	li:nth-child(5){transform:matrix(1,0,0,1,20,20);}
+	li:nth-child(6){transition:all 2s;}
+	li:nth-child(6):hover{width:200px;height:200px;background:yellow;}
+	li:nth-child(7){transition-property:all;transition-duration:3s;transition-timing-function:ease-out;transition-delay: 2s;}
+	li:nth-child(7):hover{width:200px;height:200px;}
+	figure{width:600px;height:400px;overflow:hidden;position:relative;float:left;}
+	img{width:600px;height:400px;transition:all 1s;}
+	figure:hover img{transform:translateX(-10px);opacity:0.5;}
+	h2,p{position:absolute;color:#fff;transition:all 1s;}
+	h2{top:70%;left:15%;}
+	p{top:80%;left:15%;transform:translateY(200px)}
+	figure:hover h2{transform:translateY(-10px)}
+	figure:hover p{transform:translateY(0px)}
+	
+	
+
+
+	</style>
+</head>
+<body>
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>	
+	</ul>
+	<figure>
+<img src="img/pic1.jpg" alt="">
+<h2>平移动画</h2>
+<p>最简单的平移运动</p>
+	</figure>	
+
+
+
+</body>
+</html>

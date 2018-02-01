@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Please enter the page title</title>
+		<meta name="keywords" content="关键词,关键词" />
+		<meta name="description" content="" />
+		<style>
+			*{
+				margin:0px;
+				padding:0px;
+				font-family:'迷你简卡通';
+			}
+			html,body{
+				width:100%;
+				height:100%;
+				background-color:rgba(253, 217, 227,.2);
+			}
+			ul{
+				list-style:none;
+			}
+			#container{
+				width:800px;
+				height:600px;
+				margin:auto;
+			}
+			#container ul{
+				width:100%;
+				height:62%;
+			}
+			#container ul li{
+				width:50%;
+				height:100%;
+				float:left;
+				text-align:center;
+			}
+			#container ul li div{
+				width:223px;
+				height:337px;
+				margin:auto;
+				border-radius:50%;
+				border:10px solid rgb(254, 123, 163);
+				background-position:center;
+				background-repeat:no-repeat;
+			}
+			#container ul li p{
+				margin:10px 0px;
+				font-size:30px;
+			}
+			#container ul li div.user{
+				background-image:url('img/readyl.png');
+			}
+			#container ul li div.computer{
+				background-image:url('img/readyr.png');
+			}
+			#container ul li div.guess0,#switch li div.guess0{
+				background-image:url('img/1.png');
+			}
+			#container ul li div.guess1,#switch li div.guess1{
+				background-image:url('img/2.png');
+			}
+			#container ul li div.guess2,#switch li div.guess2{
+				background-image:url('img/3.png');
+			}
+			#container div.play{
+				text-align:center;
+			}
+			#container div.play button{
+				border:10px solid rgb(254, 123, 163);
+				border-radius:50%;
+				outline:none;
+				background-color:rgb(253, 217, 227);
+				height:60px;
+				width:200px;
+				font-size:24px;
+				font-weight:bold;
+				color:rgb(134, 123, 117);
+				cursor:pointer;
+			}
+			#container div.play button.disabled{
+				border:10px solid #bbb;
+				color:#bbb;
+			}
+			#container div.play button:hover{
+				border-color:red;
+				font-size:34px;
+				color:rgb(51, 43, 41);
+			}
+			#container div.play button.disabled:hover{
+				border:10px solid #bbb;
+				font-size:24px;
+				color:#bbb;
+			}
+			#switch{
+				position:fixed;
+				top:0px;
+				left:0px;
+				bottom:0px;
+				display:none;
+			}
+			#switch li{
+				width:200px;
+				height:30%;
+				border-radius:50%;
+				border:10px solid rgb(254, 123, 163);
+				cursor:pointer;
+			}
+			#switch li:hover{
+				background-color:rgb(254, 123, 163);
+			}
+			#switch li div{
+				width:100%;
+				height:100%;
+				text-align:center;
+				font-size:30px;
+				background-position:center;
+				background-repeat:no-repeat;
+			}
+			#result{
+				font-size:50px;
+				text-align:center;
+				width:100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<ul>
+				<li>
+					<p id="userName">我</p>
+					<div class="user animate"></div>
+				</li>
+				<li>
+					<p id="compName">电脑</p>
+					<div class="computer animate"></div>
+				</li>
+			</ul>
+			<div class="play">
+				<button id="opbtn" onclick = "game.play();">开&nbsp;始</button>
+				<br/><br/><br/>
+				<div id="result"></div>
+			</div>
+		</div>
+		<ul id="switch">
+			<li>
+				<div class="guess0" onclick = "game.verdict(0)">石头</div>
+			</li>
+			<li>
+				<div class="guess1" onclick = "game.verdict(1)">剪刀</div>
+			</li>
+			<li>
+				<div class="guess2" onclick = "game.verdict(2)">布</div>
+			</li>
+		</ul>
+		<script>
+			Function.prototype.extends = function(Clazz,extend){
+				for(var prop in Clazz.prototype){
+					this.prototype[prop] = Clazz.prototype[prop];
+				}
+				for(var prop in extend){
+					this.prototype[prop] = extend[prop];
+				}
+			}
+			function Player(name){
+				this.name = name;
+			}
+			Player.prototype.guess = function(){}
+			Player.prototype.draw = function(){}
+
+			function User(name){
+				Player.call(this,name);
+			}
+			User.extends(Player,{
+				guess : function(point){
+					return this.point = point;
+				}
+			});
+
+			function Comp(name){
+				Player.call(this,name);
+			}
+			Comp.extends(Player,{
+				guess : function(){
+					return this.point = (Math.random()*1000<<0)%3;
+				}
+			});
+			function GuessGame(user,comp){
+				this.user = user;
+				this.comp = comp;
+				this.init();
+			}
+			GuessGame.prototype.init = function(){
+				document.getElementById('userName').innerText = '我：'+this.user.name;
+				document.getElementById('compName').innerText = '电脑：'+this.comp.name;	
+			}
+			GuessGame.prototype.play = function(){
+				this.start();
+				this.startAnimate();
+			}
+			GuessGame.prototype.start = function(){
+				document.getElementById('result').innerHTML = '';
+				var opbtn = document.getElementById('opbtn');
+				opbtn.className = 'disabled';
+				opbtn.innerText = '游戏中...';
+				opbtn.disabled = true;
+				document.getElementById('switch').style.display='block';
+			}
+			GuessGame.prototype.end = function(){
+				var opbtn = document.getElementById('opbtn');
+				opbtn.className = '';
+				opbtn.innerHTML = '再来一局';
+				opbtn.disabled = false;
+				document.getElementById('switch').style.display='none';
+				window.clearInterval(this._interval);
+			}
+			GuessGame.prototype.startAnimate = function(){
+				var animats = document.getElementsByClassName('animate');
+				var serial = 0;
+				this._interval = window.setInterval(function(){
+					animats[0].className = "user animate guess"+(serial++)%3;
+					animats[1].className = "user animate guess"+(serial++)%3;
+				},200);
+			}
+			GuessGame.prototype.verdict = function(point){
+				var animats = document.getElementsByClassName('animate');
+				animats[0].className = "user animate guess"+this.user.guess(point);
+				animats[1].className = "user animate guess"+this.comp.guess();
+				var res = this.user.point - this.comp.point;
+				var result = document.getElementById('result');
+				switch(res){
+					case 0:
+						result.innerText = '平局！！！';
+						break;
+					case 1:
+					case -2:
+						result.innerText = '55555~我输了';
+						break;
+					case -1:
+					case 2:
+						result.innerText = 'Yea~我赢了';
+						break;
+					default:
+						result.innerText = res;
+				}
+				this.end();
+			}
+
+			var user = new User('王二狗');
+			var comp = new Comp('张二麻');
+			var game = new GuessGame(user,comp);
+		</script>
+	</body>
+</html>

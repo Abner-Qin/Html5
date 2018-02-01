@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>标题</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<style>
+	*{margin:0;padding:0;}
+	fieldset{width:600px;margin:20px auto;text-align:center;}
+	input{width:550px;height:30px;margin:10px 0;border:1px solid #999;}
+	
+	
+	#show{margin-top:30px;}
+	</style>
+</head>
+<body>
+	<fieldset>
+	<legend>客户信息管理网页</legend>
+	<label for="btn">姓名:</label><input type="text" name="" id="btn" value="" required>
+	<label for="btn1">邮箱:</label><input type="email" name="" id="btn1" value="" required>
+	<label for="btn2">电话:</label><input type="text" name="" id="btn2" value="" required>
+	<label for="btn3">备注:</label><input type="text" name="" id="btn3" value="" required>
+	<label for="btn4">保存:</label><input type="button" name="" id="btn4" value="保存" required>
+	
+	<label for="btn5">根据姓名检索信息:</label><input type="text" name="" id="btn5" value="" required><input type="button" name="" value="检索" id="btn6">
+	<div id="show"></div>
+	</fieldset>
+</body>
+<script>
+var btn=document.getElementById('btn')
+var btn1=document.getElementById('btn1')
+var btn2=document.getElementById('btn2')
+var btn3=document.getElementById('btn3')
+var btn4=document.getElementById('btn4')
+var btn5=document.getElementById('btn5')
+var btn6=document.getElementById('btn6')
+var show=document.getElementById('show')
+
+	btn4.onclick=function(){
+	var obj=new Object;
+	obj.name=btn.value;
+	obj.tel=btn1.value;
+	obj.email=btn2.value;
+	obj.more=btn3.value;
+	var str=JSON.stringify(obj)
+	localStorage.setItem(obj.name,str)
+	btn.value='';
+	btn1.value='';
+	btn2.value='';
+	btn3.value='';
+}
+
+	btn6.onclick=function(){
+	var val=btn5.value;
+	var str=localStorage.getItem(val);
+	var data=JSON.parse(str)
+	show.innerHTML='姓名:'+data.name+'<br/>'+'邮箱:'+data.tel+'<br/>'+'电话:'+data.email+'<br/>'+'保存:'+data.more+'<br/>'
+}
+</script>
+</html>

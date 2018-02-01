@@ -1,0 +1,45 @@
+https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840038939c291467cc7c747b1810aab2fb8863508000（廖雪峰git教程）
+1.提交代码到github
+git init（建立git仓库 生成.git文件） 
+git config --global user.name "peter" (配置用户名)
+git config --global user.email "1850208275@qq.com" （配置邮箱）
+git add . （将项目的所有文件添加到仓库中 如果想添加某个特定的文件，只需把.换成特定的文件名即可）
+git commit -m "first commit" （将add的文件注释commit到仓库）
+去github上创建自己的Repository（点击右上角加号选择Create repository第一个即可创建，拿到github上新建文件夹的https地址）
+git remote add origin https://github.com/hanhailong/CustomRatingBar（将本地的仓库关联到github上）
+git pull origin master（pull是为了本地 commit 和远程commit 的对比记录,git 是按照文件的行数操作进行对比的,如果同时操作了某文件的同一行那么就会产生冲突,git 也会把这个冲突给标记出来,这个时候就需要先把和你冲突的那个人拉过来问问保留谁的代码,然后在 git add && git commit && git pull 这三连,再次 pull 一次是为了防止再你们协商的时候另一个人给又提交了一版东西,如果真发生了那流程重复一遍,通常没有冲突的时候就直接给你合并了,不会把你的代码给覆盖掉）
+git push -u origin master（上传代码到github远程仓库）
+执行完后，如果没有异常，等待执行完就上传成功了，中间可能会让你输入Username和Password，你只要输入github的账号和密码就行了
+
+bdd85d6c681a1f4ad543179a1e5fcd2fb1ff7344
+2.删除git远程仓库的某个文件
+
+git clone https://github.com/Abner-Qin/echarts.git（先将需要删除文件的工程复制到本地）
+git rm -r haha.txt(进入拷贝下来的本地项目文件夹里面找到需要删除的haha.txt文件并执行删除操作，如果是文件夹则是后跟文件夹名)
+git commit -m "remove haha.txt"(备注删除信息)
+git push origin master(提交到远程主分支上)
+
+3.创建新分支
+git checkout -b Html5（它是下面两条命令的简写：
+git branch Html5
+git checkout Html5）
+vim index.html（不是必需的，打开编辑页面键盘输入字母 “i”或“Insert”键进入最常用的插入编辑模式。编辑完成后按下 “ESC” 键，退出编辑模式，切换到命令模式，在命令模式下键入"ZZ"或者":wq"保存修改并且退出 vi 。如果只想保存文件，则键入":w"，回车后底行会提示写入操作结果，并保持停留在命令模式）
+git add index.html
+git commit -a -m 'index.html'
+git push origin Html5(生成新的Html5分支并上传index.html文件)
+
+4.合并Html5分支内容带主分支
+假如现在在Html5分支上，刚开发完项目，执行了命令下列命令
+git  add .
+git  commit -m ‘Html5'
+git push -u origin Html5
+之后
+git checkout master（切换到主分支）
+git merge Html5 （合并Html5代码）
+git status（查看状态）
+git commit -m  "分支代码同步到主干上"
+git push origin master（提交到主干上）
+
+
+
+

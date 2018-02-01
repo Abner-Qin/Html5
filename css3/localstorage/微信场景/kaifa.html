@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>微信场景</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width,minimum-scale=0.5,maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="swiper-3.3.1.min.css">
+<link rel="stylesheet" href="animate.min.css">
+<style>
+	body,html{width:100%;height:100%}
+	section{width:100%;height:100%;}
+	.sw,.s1,.s2,.s3,.sw2{width:100%;height:100%;}
+
+	
+	.s1{background:#03FC00}
+	.s2{background:#CBCBCB}
+	.s3{background:#FAFF05}
+	
+	.img2,.img3{position:relative;padding: 0 15%;}
+	.img1{padding-left:60px;}
+	p{text-align:center;font-size:5rem;}
+	.p0{font-size:10rem;color:#D95148;font-weight:bold;margin-top:20px;}
+	.p1{color:white;font-weight:bold;font-size:5rem;margin-top:20px;}
+	.img20,.img30{position:absolute;left:22%;top:22%;}
+	.img111{position:absolute;left:50%;bottom:5%;}
+	.p2,.p3{font-size:6rem;padding:10px 0;color:#6C568A;}
+	.p3{color:#CE9D02;}
+	.p20,.p30{font-size:4rem;color:#6C568A;}
+	.p30{color:#CE9D02;}
+	.p21,.p31{color:white;padding-top:10px;}
+	.img201,.img301{padding:40% 25%;}
+</style>
+</head>
+<body>
+<section>
+<div class="swiper-container sw" id="sw1">
+	<div class="swiper-wrapper sw2"> 
+		<div class="swiper-slide s1">
+			<img src="imgs/cover.png" class="ani img1" swiper-animate-effect="bounce" swiper-animate-duration="1s" swiper-animate-delay="">
+
+			<img src="imgs/icon_up.png" class="ani img111" swiper-animate-effect="bounceInUp" swiper-animate-duration="1s" swiper-animate-delay="">
+			
+			<p class="ani p0"  swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="0.5s">最靠谱</p>
+			<p class="ani p1"  swiper-animate-effect="bounceIn" swiper-animate-duration="1s" swiper-animate-delay="0.5s">互联网公司</p>
+
+		</div> 
+
+
+
+		<div class="swiper-slide s2">
+			<p class="ani p2"  swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0.2s">性感表现代码</p>
+			<p class="ani p20"  swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0.2s">把不可能变成可能</p>
+			<p class="ani p21"  swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0.2s">开发类</p>
+
+
+			<img src="imgs/circle.png" class="ani img2" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.2s">
+			<img src="imgs/people.png" class="ani img20" swiper-animate-effect="bounceInLeft" swiper-animate-duration="1s" swiper-animate-delay="0.4s">
+			<img src="imgs/check_design.png" class="ani img201" swiper-animate-effect="bounceInUp" swiper-animate-duration="1s" swiper-animate-delay="0.2s">
+			<img src="imgs/icon_up.png" class="ani img111" swiper-animate-effect="bounceInUp" swiper-animate-duration="1s" swiper-animate-delay="">
+			
+		</div> 
+
+
+		<div class="swiper-slide s3">
+			<p class="ani p3"  swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0.2s">不求三头六臂</p>
+			<p class="ani p30"  swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0.2s">只求设计给力</p>
+			<p class="ani p31"  swiper-animate-effect="bounceInDown" swiper-animate-duration="1s" swiper-animate-delay="0.2s">设计类</p>
+
+
+			<img src="imgs/circle-design.png" class="ani img3" swiper-animate-effect="bounceInUp" swiper-animate-duration="1s" swiper-animate-delay="0.2s">
+			<img src="imgs/people_design.png" class="ani img30" swiper-animate-effect="bounceInUp" swiper-animate-duration="1s" swiper-animate-delay="0.4s">
+			<img src="imgs/check_design.png" class="ani img301" swiper-animate-effect="bounceInUp" swiper-animate-duration="1s" swiper-animate-delay="0.2s">
+			<img src="imgs/icon_up.png" class="ani img111" swiper-animate-effect="bounceInUp" swiper-animate-duration="1s" swiper-animate-delay="">
+		</div> 
+
+
+	</div> 
+<div class="swiper-pagination"></div>
+
+</div> 
+</section>
+</body>
+
+<script type="text/javascript" src="zepto.js"></script>
+<script type="text/javascript" src='touch.js'></script>
+<script type="text/javascript" src='iscroll.js'></script>
+<script type="text/javascript" src="swiper-3.3.1.jquery.min.js"></script>
+<script type="text/javascript" src="swiper.animate1.0.2.min.js"></script>
+<script>
+
+function bodyScale(){
+var devicewidth=document.documentElement.clientWidth;
+	var scale=devicewidth/640;
+	document.body.style.zoom=scale;
+}
+window.onload=window.onresize=function(){
+	bodyScale();
+
+
+var myScroll = new IScroll('section', { 
+                    mouseWheel: true, 
+                    scrollbars: true
+ });
+
+var mySwiper = new Swiper ('.swiper-container', { 
+	direction: 'vertical',
+// 	loop: true, 
+// autoplay:3000,
+
+// freeMode:true,
+// freeModeSticky:true,
+// effect:'coverflow',
+// effect:'flip',
+ // pagination: '.swiper-pagination', 
+	// paginationType:'progress',
+
+	onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit 
+		swiperAnimateCache(swiper); //隐藏动画元素 		
+		swiperAnimate(swiper); //初始化完成开始动画
+	 }, 
+	onSlideChangeEnd: function(swiper){
+	 	swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+	 } 
+ }) 
+}
+
+
+</script>
+</html>

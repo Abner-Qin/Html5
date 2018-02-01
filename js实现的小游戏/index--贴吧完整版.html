@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+*{ margin:0; padding:0}
+html,body{ height:100%}
+#div1{ 
+	height:100%; 
+	width:100%; 
+	background:#999; 
+	z-index:10; 
+	display:none;
+	filter:alpha(opacity=20);
+	opacity:.2;
+	}
+#box{ 
+     height:400px; 
+	 width:300px; 
+	 border:1px solid #0F6; 
+	 margin:20px 0 0 200px;
+	 position:absolute;
+	 left:200px;
+	 top:20px
+	 }
+#box1{ 
+     height:350px; 
+	 width:300px;
+	 
+	 }
+#box2{ 
+	 height:200px; 
+	 width:300px; 
+	 border:1px solid #069;
+	 position:fixed; 
+	 left:200px; 
+	 top:200px; 
+	 display:none;
+	 z-index:100;
+	 }
+.tit{ text-align:center; height:50px; margin-bottom:40px; background:#C30}
+#input2{ position:absolute; right:0; top:0;}
+
+</style>
+</head>
+
+<body>
+
+<div id="box">
+    <textarea id="box1" disabled></textarea>
+    <input type="button" value="发布" id="btn" onClick="displays()"/>
+    <input type="button" value="清除" onClick="cl(event)"/>
+</div>
+
+<div id="div1"></div>
+
+<div id="box2">
+    <div class="box3">
+        <p class="tit" id="tit">微博中心</p>
+        <input id="input2" type="button" value="Ｘ" onClick="nones()"/>
+        <input type="text" id="txt" value=""/>
+        <input type="button" value="确定" onClick="pint(event)">
+    </div>
+</div>
+<script type="text/javascript">
+/*综合题：
+1.主页面有若干条微博帖子
+2.在页面上制作一个发布按钮
+3.点击按钮弹出一个子窗口
+4.窗口必须使用DIV来模拟
+5.该窗口要有标题栏，鼠标按住标题栏可以拖动
+6.窗口右上角要有关闭按钮，点击关闭窗口
+7.窗口底部要有半透明的遮罩层，使得主页面暂时无法操作
+8.输入内容后点击确定，关闭弹出窗口和遮罩层，将输入框中的内容追加到微博列表中
+9.每次打开弹出窗口，窗口输入框应该初始化为空白，并回到原始位置
+
+
+
+1.首先搭建一个基本框架　　包含接收框　和一个确定发布的按钮
+２.获取元素　当点击发布时　触发事件　让隐藏的ｄｉｖ框展现出来
+
+
+
+
+
+
+
+*/
+
+//
+
+
+
+
+var div1=document.getElementById("div1");
+var box1=document.getElementById("box1");
+var box2=document.getElementById("box2");
+//当点击事件发布时触发事件　ｄｉｓｐｌａｙ事件
+function displays(event){
+	var div1=document.getElementById("div1");
+		box2.style.display="block";
+		div1.style.display="block";
+		box2.style.left='200px';
+		box2.style.top='200px';
+	}
+function nones(event){
+	box2.style.display="none";
+	div1.style.display="none";
+	}	
+	
+//清除事件
+function cl(event){
+	var e=event||window.event;
+	if(window.confirm("你确定要删除该贴吧所有帖子吗？")){
+		if(box1.innerHTML!=null){
+		box1.innerHTML="";
+		
+		
+		}else if(box1.innerHTML=""){
+			alert("没有帖子可以删除！");
+			
+		}
+		}
+	
+	}
+
+
+
+
+//格式的写法
+function format(num){
+	return num>=10?num:"0"+num;
+	
+	
+	}
+
+
+//文字输入的实现
+var i=1;
+function pint(event){
+	//获取当前时间
+	var time=new Date();
+	var h=time.getHours();
+	var m=time.getMinutes();
+	var s=time.getSeconds();
+	var st=format(h)+":"+format(m)+":"+format(s);
+	var txt=document.getElementById("txt");
+	box1.innerHTML +="第"+(i++)+"楼:"+txt.value+st+"\n\n";
+	txt.value="";
+	box2.style.display="none";
+	div1.style.display="none";
+	}
+
+
+
+
+	
+
+//拖拽的实现
+
+var tit=document.getElementById("tit");
+var offX,offY,dom=1;
+tit.onmousedown=function(event){
+	var e=event||window.event;
+	offX=e.offsetX;
+	offY=e.offsetY;
+	dom=1
+	
+	
+	}
+
+document.onmousemove=function(event){
+	var e=event||window.event;
+	var cW=e.clientX;
+	var cH=e.clientY;
+	if(dom){
+		box2.style.left=cW-offX+'px';
+		box2.style.top=cH-offY+'px';
+		
+		}
+	
+	}
+
+document.onmouseup=function(){
+	dom=0;
+	
+	
+}
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>border</title>
+</head>
+<style type="text/css">
+ul li{width:100px;height:100px;margin-right:60px;margin-top:20px;background:#ccc;float:left;list-style:none;}
+li:nth-child(1){border-radius:10px;}
+li:nth-child(2){border-radius:50%;}
+li:nth-child(3){border-radius:50px 0 50px 0;}
+li:nth-child(4){border-radius:100px 0 100px 100px;}
+li:nth-child(5){border-radius:0 0 0 50px;}
+li:nth-child(6){width:200px;height:100px;border-radius:50%;}
+li:nth-child(7){width:0;height:0;border:50px solid #ccc;background:transparent;border-right-color:transparent;border-radius:50%;}
+li:nth-child(8){width:0;height:0;border:50px solid #ccc;border-top-color:red;border-bottom-color:yellow;background:transparent;border-left-color:transparent;border-right-color:transparent;border-radius:50%;}
+li:nth-child(9){width:0;height:0;border:60px solid;-moz-border-top-colors:red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue;
+		-moz-border-bottom-colors:red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue;
+		-moz-border-left-colors:red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue;
+		-moz-border-right-colors:red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue red red yellow yellow green green pink pink blue blue;}
+li:nth-child(10){text-align:center;line-height:100px;font-size:14px;
+		border-image-width:20px;
+		border-image-source: url(bg.png);
+		border-image-slice:33%;
+		border-image-repeat:round;
+	}
+li:nth-child(11){width:300px;height:100px;font-size:35px;line-height:100px;text-align:center;background:#454545;color:#343434;
+text-shadow:1px 1px 2px #8C8C8C,1px 1px 2px #8C8C8C,1px 1px 2px #8C8C8C,1px 1px 2px #8C8C8C;
+}
+li:nth-child(12){width:300px;height:100px;font-size:35px;line-height:100px;text-align:center;background:#000;color:#FDFEFC;text-shadow:1px 1px 10px #730372,-2px -2px 10px #730372,4px 4px 10px #730372,-1px -1px 10px #730372;}
+li:nth-child(13){width:300px;height:100px;font-size:35px;line-height:100px;text-align:center;background:#DDDDDD;color:#FCFCFC;text-shadow:1px 1px 10px #BDBDBD,-2px 4px 10px #BDBDBD,4px 6px 10px #BDBDBD,-1px 10px 10px #BDBDBD;}
+li:nth-child(14){width:300px;height:100px;font-size:35px;line-height:100px;text-align:center;background:#EEEEEE;color:#FD406F;text-shadow:2px 2px 5px #F96188,-2px 4px 5px #F96188,4px -4px 5px #F96188,-1px 10px 5px #F96188;}
+li:nth-child(15){width:300px;height:100px;font-size:35px;line-height:100px;text-align:center;background:#D5D2BF;color:#CFCBCC;text-shadow:1px 1px 2px #4A4C44,2px 1px 2px #4A4C44,4px 4px 2px #4A4C44,2px 2px 2px #BABCBB;}
+li:nth-child(16){width:300px;height:100px;font-size:35px;line-height:100px;text-align:center;background:#EEEEEE;color:#706F72;text-shadow:1px 1px 1px #18117D,-1px -1px 1px #18117D,1px 1px 1px #18117D,-1px -1px 1px #18117D;}
+li:nth-child(17){width:300px;height:100px;font-size:35px;line-height:100px;text-align:center;background:#D5D2BF;color:#D5D2C0;text-shadow:1px 1px 1px #44413F,-1px -1px 1px #44413F,1px 1px 1px #44413F,-1px -1px 1px #44413F;}
+li:nth-child(18){width:300px;height:100px;font-size:35px;line-height:100px;text-align:center;background:#EEEEEE;color:#F60301;text-shadow:1px 1px 10px #FB1304,-1px -2px 10px #FB1304,1px -7px 10px #FB1304,-1px -10px 10px #FB1304;}
+li:nth-child(19){width:200px;background:#CCCCFF;color:#656564;font-size:20px;border-radius:40%;text-align:center;line-height:100px;box-shadow:3px -3px 1px 4px #B8B8EA,6px -5px 1px 4px #B8B8EA;}
+li:nth-child(20){width:200px;background:#CCCCFF;color:#656564;font-size:20px;border-radius:40%;text-align:center;line-height:100px;box-shadow:1px 1px 1px 3px #B8B8EA,-2px -2px 1px 3px #B8B8EA;}
+li:nth-child(21){width:200px;height:200px;border-radius:50%;background: -webkit-radial-gradient(70px 70px,#B3B3B3 0%,#ffffff 0%,#000 100%)}
+li:nth-child(22){width:400px;margin-bottom:30px;border-radius:20px;background:-webkit-linear-gradient(top,#000 0%,#ffffff 35%,#000 100%);}
+li:nth-child(23){width:500px;height:200px;border:1px solid #000;line-height:25px;margin-bottom:20px;background:-webkit-linear-gradient(left,#FC9C96 0%,#F8F998 20%,#95FC95 40%,#77FDE8 60%,#7883FB 80%,#F2828C 100%);-webkit-background-clip:text;-webkit-text-fill-color: transparent;}
+div img{width:100%;height:100%;
+		-webkit-mask:url('01.png') 40px 50px no-repeat;
+		
+		}
+</style>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+	(function($){
+		$(function(){
+			var 
+				oimg=$('div img')
+				x=0
+				y=0
+				a=0
+				b=0
+				setInterval(f1,10)
+				function f1(){
+					var clientW=document.documentElement.clientWidth
+					var clientH=document.documentElement.clientHeight
+					if(a==0){
+						if(x<clientW-260){
+							x++
+						}else{a=1}
+					}	
+					if(a==1){
+						if(x>0){
+							x--
+						}else{a=0}
+					}
+					if(b==0){
+						if(y<clientH-260){
+							y++
+						}else{b=1}
+					}
+					if(b==1){
+						if(y>0){
+							y--
+						}else{b=0}
+					}							
+					oimg.css('mask-position-x',x )
+					oimg.css('mask-position-y',y )
+				}
+				
+				
+			// var x=0,y=0,z=true,s=true,time=null
+			// timer=setInterval(function(){
+			// 	if(z){
+			// 		x++
+			// 		if(x>=640){
+			// 			z=false
+			// 		};
+
+			// 	}else{
+			// 		x--;
+			// 		if(x<=640){
+			// 			z=true;
+			// 		}
+			// 	}
+			// 	if(s){
+			// 		y++
+			// 		if(y>=340){
+			// 			s=false
+			// 		};
+
+			// 	}else{
+			// 		y--;
+			// 		if(y<=0){
+			// 			s=true;
+			// 		}
+			// 	}
+			// 	$('img').css('-webkit-mask-position'+x+'px '+y+'px')
+			// },2)
+
+
+
+		})	
+	})(jQuery)
+
+
+	
+</script>
+<body>
+<ul>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+<li>图片边框</li>
+<li>Beautiful Text</li>
+<li>Beautiful Text</li>
+<li>Beautiful Text</li>
+<li>Beautiful Text</li>
+<li>Beautiful Text</li>
+<li>Beautiful Text</li>
+<li>Beautiful Text</li>
+<li>Beautiful Text</li>
+<li>Box Shodow</li>
+<li>Box Shodow</li>
+<li></li>
+<li></li>
+<li>文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果文字颜色渐变效果</li>
+
+</ul>	
+	<div>
+		<img src="07.jpg" alt="">
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>标题</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<style>
+	*{margin:0;padding:0;}
+	#cvs{border:1px solid #000;margin-top:30px;margin-left:50px }
+</style>
+</head>
+<body>
+	<canvas id="cvs" width="600" height="400"></canvas>
+	<button id="btn1">画画</button>
+	<button id="btn2">清除</button>
+	<button id="btn3">重画</button>
+</body>
+<script>
+	var cvs=document.getElementById('cvs');
+	var ctx=cvs.getContext('2d');
+	var btn1=document.getElementById('btn1');
+	var btn2=document.getElementById('btn2');
+	var btn3=document.getElementById('btn3');
+
+	btn1.onclick=function(){
+		cvs.onmousedown=function(e){
+			var Event=e||window.event;
+			ctx.beginPath();
+			ctx.moveTo(Event.clientX-cvs.offsetLeft,Event.clientY-cvs.offsetTop);
+			document.onmousemove=function(e){
+				var Event=e||window.event;
+				ctx.lineTo(Event.clientX-cvs.offsetLeft,Event.clientY-cvs.offsetTop);
+				ctx.strokeStyle='red';
+				ctx.lineWidth=5;
+				ctx.stroke();
+			}
+
+			
+		}
+		document.onmouseup=function(){
+				document.onmousedown=null;
+				document.onmousemove=null;
+			}
+	}
+
+	btn3.onclick=function(){
+		ctx.clearRect(0,0,cvs.width,cvs.height);
+	}
+
+	btn2.onclick=function(){
+		cvs.onmousedown=function(e){
+			var Event=e||window.event;
+		document.onmousemove=function(e){
+			var Event=e||window.event;
+			ctx.clearRect(Event.clientX-cvs.offsetLeft,Event.clientY-cvs.offsetTop,10,10);
+		}
+
+		
+		}
+		document.onmouseup=function(){
+				document.onmousedown=null;
+				document.onmousemove=null;
+			}
+	}
+</script>
+</html>

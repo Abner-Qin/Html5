@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+*{ padding:0; margin:0}
+img{ display:block;}
+.box{ width:320px; height:459px; padding-top:110px; position:absolute; top:50px; left:50%; margin-left:-160px;
+ background:url(a.jpg) no-repeat center top; visibility:visible;}
+ .box a{ text-align:center; font-size:45px;}
+ .b-t a{ height:40px; width:100px; color:#FFFFFF; line-height:40px; float:left; margin-bottom:20px;}
+ .b-t #a2{ margin:0 10px;}
+ #a4,#a5,#a6,#a10,#a11,#a12{ font-size:30px; color:#666666;}
+ .b-b{ padding:0px 40px 0 40px;}
+ .b-b a{ height:67px; line-height:67px; width:80px; float:left;}
+ #btn1{ cursor:pointer; font-size:16px; width:200px; border:1px solid #666; height:32px; background:url(a-1.jpg) repeat-x; color:#fff; margin-left:60px; margin-top:30px;}
+ #btn2{  cursor:pointer; font-size:16px;  width:200px; border:1px solid #666;  height:30px; background:url(a-1.jpg) repeat-x; color:#fff; margin-top:10px; margin-left:60px;}
+ #btn3{ cursor:pointer;  font-size:16px;  width:200px; border:1px solid #666; height:30px; background:url(a-1.jpg) repeat-x; color:#fff; margin-top:10px; margin-left:60px;}
+.box2{width:320px; height:569px; margin:50px auto; background:rgb(1,1,2);}
+.box2 #p1{ overflow:hidden; padding-left:10px; font-size:14px;  line-height:28px; width:270px;
+ color:#CCCCCC; height:463px; margin:0 auto;background:url(a-3.jpg);}
+.box2 ul{ width:320px; height:40px; background:rgb(15,17,20);}
+.box2 ul li{ float:left; list-style:none;}
+.box2 ul li a{ display:block; padding:10px 10px; font-size:12px; color:#CCCCCC; text-decoration:none;}
+#span1{ position:absolute; top:450px; left:220px; color:#FF0000; font-size:12px;}
+
+</style>
+<title>无标题文档</title>
+</head>
+
+<body>
+<div id="clock" class="box">
+	<div class="b-t">
+    <a id="a1">0</a>
+    <a id="a2">0</a>
+    <a id="a3">0</a>
+    </div>
+    <div class="b-b">
+    <a id="a4">-1</a>
+    <a id="a5">-1</a>
+    <a id="a6">-1</a>
+    
+    <a id="a7">0</a>
+    <a id="a8">0</a>
+    <a id="a9">0</a>
+    
+    <a id="a10">1</a>
+    <a id="a11">1</a> 
+    <a id="a12">1</a>
+    </div>
+    <span id="span1"></span>
+    <input id="btn1" type="button" value="开始计时" onClick="one()">
+    <input id="btn2" type="button" value="记录时间" onClick="three()">
+    <input id="btn3" type="button" value="查看记录" onClick="four()">
+</div>
+<div class="box2">
+	<img src="a-2.jpg"/>
+    <p id="p1"></p>
+    <ul>
+    	<li><a href="javascript:void(0)"onClick="four()">返回</a></li>
+        <li><a href="#b1">第1页</a></li>
+        <li><a href="#b2">2</a></li>
+        <li><a href="#b3">3</a></li>
+        <li><a href="#b4">4</a></li>
+        <li><a href="#b5">5</a></li>
+        <li><a href="#b6">6</a></li>
+        <li><a href="#b7">第7页</a></li>
+        <li><a href="javascript:void(0)" onClick="qingkong()">清空</a></li>
+    </ul>
+</div>
+</body>
+<script>
+	var b=0,c=0,d=0,jilu='',jishu=0,fenye=0;
+	function f(a,b){//根据规律设定一个用于改变特定盒模型内容的函数
+		document.getElementById(a).innerHTML=b;
+		}
+	function one(){//设定主函数
+	
+		date=new Date().getTime()
+		var a=document.getElementById('btn1').value;
+		if(a=='开始计时'){
+			document.getElementById('btn1').value='停止计时'
+			two();
+			}
+			else{
+				document.getElementById('btn1').value='开始计时';
+				window.clearInterval(timer)
+				}
+		}
+	function two(){
+		
+		var date2=new Date().getTime();
+		var a=date2-date;
+		b=parseInt(a/10)%100;
+		c=(parseInt(a/1000))%60;
+		d=(parseInt(a/60000))%60;
+		f('a1',d);
+		f('a2',c);
+		f('a3',b);
+		
+		f('a4',d-1);
+		f('a5',c-1);
+		f('a6',b-1);
+		
+		f('a7',d);
+		f('a8',c);
+		f('a9',b);
+		
+		f('a10',d+1);
+		f('a11',c+1);
+		f('a12',b+1);
+		
+		f('span1','+'+jishu)
+		timer=setTimeout(two,10)
+		}
+	function three(){
+		if(document.getElementById('btn1').value=='停止计时')
+		{jishu+=1;	
+		if(jishu%15==1){
+			fenye+=1;
+			jilu=jilu+
+		'<b id="b'+fenye+'">第'+fenye+'页</b>'+'<br/>'
+		+'第 '+jishu+' 位同学用时  '+
+		document.getElementById('a1').innerHTML+' 分 '+
+		document.getElementById('a2').innerHTML+' 秒 '+ 
+		document.getElementById('a3').innerHTML+' '+'<br/>'
+		document.getElementById('p1').innerHTML=jilu;
+			}
+		else{jilu=jilu+'第 '+jishu+' 位同学用时  '+
+		document.getElementById('a1').innerHTML+' 分 '+
+		document.getElementById('a2').innerHTML+' 秒 '+ 
+		document.getElementById('a3').innerHTML+' '+'<br/>';
+		document.getElementById('p1').innerHTML=jilu;}
+		}
+		}
+	function four(){
+		if(document.getElementById('clock').style.visibility=='visible'){
+			document.getElementById('clock').style.visibility='hidden'
+			}
+			else{document.getElementById('clock').style.visibility='visible'}
+		}
+	function qingkong(){
+		f('p1','');
+		jishu=0;
+		jilu='';
+		fenye=0;
+		}
+</script>
+</html>

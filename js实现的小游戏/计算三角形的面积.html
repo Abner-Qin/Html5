@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	table{background:#FCC;border:3px solid #6d6d6d;margin:30px auto;}
+	
+</style>
+</head>
+
+<body>
+<table border='1'>
+ 	<caption style="height:50px;font-size:30px;font-weight:900;" align="center">计算三角形的面积</caption>
+    <tr>
+    	<td>请输入三角形的底：</td>
+        <td><input id="txt1" type="text" /></td>
+    </tr>
+    <tr>
+        <td>请输入三角形的高：</td>
+        <td><input id="txt2" type="text" /></td>
+    </tr>
+    <tr>
+        <td>三角形的面积为：</td>
+        <td><input id="txt3" type="text" /></td>
+    </tr>
+    <tr>
+    	<td><input id="btn1" type="button" value='计算' /></td>
+        <td><input id="btn2" type="button" value='重置' /></td>
+    </tr>
+</table>
+<script type="text/javascript">
+	var txt1=document.getElementById('txt1')
+	var txt2=document.getElementById('txt2')
+	var txt3=document.getElementById('txt3')
+	var btn1=document.getElementById('btn1')
+	var btn2=document.getElementById('btn2')
+	
+	txt1.onblur=function(){
+		var reg=/^(\d+)$/	
+		if(!reg.test(txt1.value)){
+			alert('只能输入数字！')	
+		}
+	}
+	txt2.onblur=function(){
+		var reg=/^(\d+)$/	
+		if(!reg.test(txt2.value)){
+			alert('只能输入数字！')	
+		}
+	}
+	btn1.onclick=function(){
+		txt3.value=(parseFloat(txt1.value)*parseFloat(txt2.value))/2
+			
+	}
+	btn2.onclick=function(){
+		txt1.value='';
+		txt2.value='';
+		txt3.value=''	
+	}
+</script>
+</body>
+</html>

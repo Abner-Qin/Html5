@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大镜</title>
+	<style>
+		div,img{
+			padding:0;
+			margin:0;
+		}
+		.outer{
+			height:350px;
+			width:350px;
+			position:relative;
+			float:left;
+		}
+		.outer img{
+			height:100%;
+			width:100%;	
+			float:left;
+			position:absolute;
+			top:0;
+			left:0;		
+		}
+		.smallimg{
+			height:50%;
+			width:50%;
+			background:yellow;
+			filter:alpha(opacity=50);
+			opacity:0.5;
+			border:1px solid #ddd;
+			float:left;
+			position: absolute;
+			top:0;
+			left:0;
+
+		}
+		.bigimg{
+			position:absolute;left:400px;
+			height:350px;
+			width:350px;
+			float:left;
+			
+			overflow: hidden;
+		}
+		.bigimg img{
+			height:700px;
+			width:700px;
+		}
+		.show{
+			display:block;
+		}
+		.hide{
+			display:none;
+		}
+		
+	</style>
+</head>
+<body>
+	<div class='outer'>
+		<div class='bgimg'>
+			<img src="min.jpg" alt="">
+		</div>
+		<div class='smallimg hide'></div>
+	</div>
+	<div class='bigimg hide'>
+		<img src="max.jpg" alt="">
+	</div>
+	<div><img src="sp.jpg" alt=""></div>
+		
+	
+	<script src='js/jquery.js'></script>
+	<script>
+		$(function(){
+			
+			rata=$(".bigimg").width()/$(".smallimg").width();
+			$(".outer").mouseover(function(){		//鼠标划过outer时
+
+				$('.smallimg').addClass('show').removeClass('hide')
+				
+				$('.bigimg').addClass('show').removeClass('hide')
+				
+				})
+
+				$('.outer').mousemove(function(e){	//鼠标在outer中移动时
+					var e=e||event;
+					var x=e.clientX-$(".outer")[0].offsetLeft-$(".smallimg").width()/2;
+					var y=e.clientY-$(".outer")[0].offsetTop-$(".smallimg").height()/2;
+					console.log($(".outer")[0].offsetLeft)
+					var xmax=$(".outer").width()-$(".smallimg").width()
+					var ymax=$(".outer").height()-$(".smallimg").height()
+
+
+					if(x<0){
+						x=0
+					}
+					if(x>xmax){
+						x=xmax
+					}
+					if(y<0){
+						y=0
+					}
+					if(y>ymax){
+						y=ymax
+					}
+					
+					$(".smallimg").css("left",x)
+					$(".smallimg").css("top",y)
+
+					$(".bigimg").scrollLeft(x*rata)
+					$(".bigimg").scrollTop(y*rata)
+				})
+
+			
+
+			$(".outer").mouseout(function(){
+				$('.smallimg').addClass('hide').removeClass('show')
+				$('.bigimg').addClass('hide').removeClass('show')
+			})
+			
+
+
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>标题</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+<style>
+	*{margin:0;padding:0;}
+</style>
+</head>
+<body>
+	<canvas id="cvs" width="900" height="500"></canvas>
+</body>
+<script>
+	var cvs=document.getElementById('cvs');
+	var ctx=cvs.getContext('2d');
+
+	var img=new Image();
+	img.src='html.png';
+	img.onload=function(){
+		ctx.drawImage(img,0,0);
+		var ulrs=cvs.toDataURL('image/jpeg',1);
+		var img2=new Image();
+		img2.src=ulrs;
+		document.body.appendChild(img2);
+	}// var data=ctx.getImageData(100,100,100,100);
+		// ctx.putImageData(data,500,200);
+</script>
+</html>
